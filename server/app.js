@@ -10,6 +10,9 @@ const bodyParser = require('body-parser');
 const layouts = require('express-ejs-layouts');
 const authRoutes = require('./routes/auth');
 const mongoose = require('mongoose');
+const cors = require('cors');
+
+const app = express();
 
 if (process.env.NODE_ENV === 'development') {
   require('dotenv').config()
@@ -17,7 +20,18 @@ if (process.env.NODE_ENV === 'development') {
 
 require('./config/database');
 
-const app = express();
+var whitelist = [
+    'http://localhost:4200',
+];
+var corsOptions = {
+    origin: function(origin, callback){
+        var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
+        callback(null, originIsWhitelisted);
+    },
+    credentials: true
+};
+
+app.use(cors(corsOptions));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -4,17 +4,16 @@ const favicon = require('serve-favicon');
 const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 const logger = require('morgan');
+const passport   = require('passport');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const layouts = require('express-ejs-layouts');
+const authRoutes = require('./routes/auth');
 const mongoose = require('mongoose');
 
 if (process.env.NODE_ENV === 'development') {
   require('dotenv').config()
 }
-
-// mongoose.connect(process.env.MONGO_URI, { useMongoClient: true })
-//     .then(() => console.log('Connected to db!'))
 
 require('./config/database');
 
@@ -37,15 +36,19 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(layouts);
 
 app.use(session({
-  secret: process.env.SESSION_SECRET,
+  secret: '3fe397575565365108556c3e5549f139e8078a8ec8fd2675a83de96289b30550a266ac04488d7086322efbe573738e7b3ae005b2e3d9afd718aa337fa5e329cf',
   resave: true,
   saveUninitialized: true,
   cookie : { httpOnly: true, maxAge: 60*60*24*365 },
   store: new MongoStore({ mongooseConnection: mongoose.connection })
 }));
 
-const index = require('./routes/index');
-app.use('/', index);
+require('./passport/serializers');
+require('./passport/local');
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use('/auth', authRoutes);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

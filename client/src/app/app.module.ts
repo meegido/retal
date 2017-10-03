@@ -10,12 +10,14 @@ import { AuthService } from './services/auth.service';
 import { IsLoggedInService } from './services/is-logged-in.canactivate.service';
 import { LoginformComponent } from './loginform/loginform.component';
 import { SignupformComponent } from './signupform/signupform.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginformComponent,
-    SignupformComponent
+    SignupformComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -12,3 +12,9 @@
 
   <button (click)="login()"> login </button>
 </form>
+<p class="error"> {{ error }} </p>
+
+
+<div *ngIf="user">
+  <button (click)="logout()"> logout </button>
+</div>

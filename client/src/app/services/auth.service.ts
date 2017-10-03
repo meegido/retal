@@ -8,6 +8,7 @@ const BASEURL = environment.BASEURL + "/auth";
 
 @Injectable()
 export class AuthService {
+
   private user:object;
   private userLoginEvent:EventEmitter<any> = new EventEmitter<any>();
   private options = {withCredentials:true};
@@ -16,35 +17,35 @@ export class AuthService {
     this.isLoggedIn().subscribe();
   }
 
-  public getLoginEventEmitter():EventEmitter<any>{
-    return this.userLoginEvent;
+    public getLoginEventEmitter():EventEmitter<any>{
+      return this.userLoginEvent;
     }
 
-  public getUser(){
-    return this.user;
-  }
+    public getUser(){
+      return this.user;
+    }
 
-  private emitUserLoginEvent(user){
-    this.user = user;
-    this.userLoginEvent.emit(user);
-    return user;
-  }
+    private emitUserLoginEvent(user){
+      this.user = user;
+      this.userLoginEvent.emit(user);
+      return user;
+    }
 
-  private handleError(e) {
-    console.log("AUTH ERROR");
-    return Observable.throw(e.json().message);
-  }
+    private handleError(e) {
+      console.log("AUTH ERROR");
+      return Observable.throw(e.json().message);
+    }
 
-  signup(username,password, email) {
+    signup(username,password,email) {
       console.log("entrooo")
-      return this.http.post(`${BASEURL}/signup`, {username,password, email}, this.options)
+      return this.http.post(`${BASEURL}/signup`, {username,password,email}, this.options)
         .map(res => res.json())
         .map(user => this.emitUserLoginEvent(user))
         .catch(this.handleError);
     }
 
-    login(username,password, email) {
-      return this.http.post(`${BASEURL}/login`, {username,password, email}, this.options)
+    login(username,password) {
+      return this.http.post(`${BASEURL}/login`, {username,password}, this.options)
         .map(res => res.json())
         .map(user => this.emitUserLoginEvent(user))
         .catch(this.handleError);
@@ -63,5 +64,4 @@ export class AuthService {
         .map(user => this.emitUserLoginEvent(user))
         .catch(this.handleError);
     }
-
 }

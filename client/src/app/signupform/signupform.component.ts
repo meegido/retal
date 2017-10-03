@@ -18,7 +18,7 @@ export class SignupformComponent implements OnInit {
   ngOnInit() {
   }
 
-  signup(){
+  signup() {
     const {username, password, email} = this.formInfo;
     if(username != "" && password != "" && email != ""){
       console.log(`Signup with ${username} ${password} ${email}`)

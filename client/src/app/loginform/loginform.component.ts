@@ -18,9 +18,6 @@ export class LoginformComponent implements OnInit {
       password: ""
     };
 
-    user: any;
-    error: string;
-
   constructor(public auth:AuthService) { }
 
   ngOnInit() {
@@ -37,13 +34,5 @@ export class LoginformComponent implements OnInit {
      console.log("You must set a username and a password");
    }
  }
-
- logout() {
-  this.auth.logout()
-    .subscribe(
-      () => this.user = null,
-      (err) => this.error = err
-    );
-}
 
 }

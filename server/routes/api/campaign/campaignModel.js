@@ -4,16 +4,16 @@ var Schema   = mongoose.Schema;
 var campaignSchema = new Schema({
 	'status': {
 		type: String,
-		enum: ['draft', 'open', 'close']
+		enum: ['draft', 'open', 'closed']
 	},
 	'totalPrice': {type: Number, required: true },
 	'totalMeters': Number,
 	'minimumOrder' : Number,
-	'countOrders': Number,
-	'metersSoldPerOrder': Number,
+	'countOrders': { type: Number, default: 0 },
+	'countMeters': { type: Number, default: 0 },
 	'manufactured': Boolean,
 	'startAt': Date,
-	'endAt': Date,
+	'endsAt': Date,
 	'userId' : {
 	 	type: Schema.Types.ObjectId,
 	 	ref: '{ref}',

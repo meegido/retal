@@ -21,4 +21,6 @@ var campaignSchema = new Schema({
 	}
 });
 
+campaignSchema.set('timestamps', true);
+
 module.exports = mongoose.model('campaign', campaignSchema);

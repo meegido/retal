@@ -1,11 +1,10 @@
 const express = require('express');
 const passport = require('passport');
 const path = require('path');
-const User = require('../models/User');
+const User = require('../../models/User');
 const bcrypt = require('bcrypt');
 const debug = require('debug')("retal:"+path.basename(__filename).split('.')[0]);
-
-var authRoutes = express.Router();
+const authRoutes = express.Router();
 
 authRoutes.post('/signup', (req, res, next) => {
   const {username, email, password} = req.body;

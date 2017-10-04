@@ -23,9 +23,14 @@ module.exports = {
   },
 
   create: (req, res) => {
-    const {status, price, delivery, redLine, minimumOrder, partners, user } = req.body;
+    const {status, totalPrice, totalMeters, minimumOrder,
+      countOrders, metersSoldPerOrder, manufactured,
+      startAt, endAt, userId } = req.body;
+
     const campaign = new campaignModel({
-      status, price, delivery, redLine, minimumOrder, partners, user
+      status, totalPrice, totalMeters, minimumOrder,
+      countOrders, metersSoldPerOrder, manufactured,
+      startAt, endAt, userId
     });
 
     campaign.save()
@@ -40,9 +45,14 @@ module.exports = {
   },
 
   update: (req, res) => {
-    const { status, price, delivery, redLine, minimumOrder, partners, user } = req.body;
+    const { status, totalPrice, totalMeters, minimumOrder,
+      countOrders, metersSoldPerOrder, manufactured,
+      startAt, endAt, userId } = req.body;
+
     const updates = {
-      status, price, delivery, redLine, minimumOrder, partners, user
+      status, totalPrice, totalMeters, minimumOrder,
+      countOrders, metersSoldPerOrder, manufactured,
+      startAt, endAt, userId
     }
 
     campaignModel.findByIdAndUpdate(req.params.id, updates, {new:true})

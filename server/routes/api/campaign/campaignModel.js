@@ -2,15 +2,22 @@ var mongoose = require('mongoose');
 var Schema   = mongoose.Schema;
 
 var campaignSchema = new Schema({
-	'status' : Boolean,
-	'price' : Number,
-	'delivery' : Number,
-	'redLine' : Number,
+	'status': {
+		type: String,
+		enum: ['draft', 'open', 'close']
+	},
+	'totalPrice': {type: Number, required: true },
+	'totalMeters': Number,
 	'minimumOrder' : Number,
-	'partners' : Number,
-	'user' : {
+	'countOrders': Number,
+	'metersSoldPerOrder': Number,
+	'manufactured': Boolean,
+	'startAt': Date,
+	'endAt': Date,
+	'userId' : {
 	 	type: Schema.Types.ObjectId,
-	 	ref: '{ref}'
+	 	ref: '{ref}',
+		required: true
 	}
 });
 

@@ -13,16 +13,9 @@ export class LogoutComponent implements OnInit {
   constructor(public auth:AuthService) { }
 
   ngOnInit() {
-    console.log(this.user)
+    this.user = this.auth.getUser()
+    this.auth.getLoginEventEmitter()
+      .subscribe(user => this.user = user)
+
   }
-
-  logout() {
-   this.auth.logout()
-     .subscribe(
-       () => this.user = null,
-       (err) => this.error = err
-     );
-
- }
-
 }

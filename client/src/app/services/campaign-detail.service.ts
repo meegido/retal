@@ -7,6 +7,7 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class CampaignDetailService {
+
   BASE_URL: string = 'http://localhost:3000';
 
   constructor(private http: Http) { }

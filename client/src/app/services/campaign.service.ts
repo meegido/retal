@@ -9,7 +9,7 @@ export class CampaignService {
 
   BASE_URL: string = 'http://localhost:3000';
 
-    constructor(private http: Http) {}
+    constructor(private http: Http) { }
 
     getList() {
       return this.http.get(`${this.BASE_URL}/api/campaigns`)

@@ -12,6 +12,6 @@ export const routes: Routes = [
   { path: 'login',  component: LoginformComponent },
   { path: 'signup',  component: SignupformComponent },
   { path: 'logout',  component: LogoutComponent },
-  { path: 'api/campaings/:id', component: CampaignDetailComponent},
+  { path: 'campaigns/:id', component: CampaignDetailComponent},
   { path: '**', redirectTo: '' }
 ];

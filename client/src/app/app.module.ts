@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { CampaignDetailComponent } from './campaign-detail/campaign-detail.component';
+import { CampaignDetailService } from './services/campaign-detail.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { CampaignDetailComponent } from './campaign-detail/campaign-detail.compo
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService, IsLoggedInService],
+  providers: [AuthService, IsLoggedInService, CampaignDetailService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

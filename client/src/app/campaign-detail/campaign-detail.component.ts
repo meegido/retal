@@ -18,13 +18,13 @@ export class CampaignDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      console.log(`El parametro recibido es: ${params['id']}`);
+    //  console.log(`El parametro recibido es: ${params['id']}`);
       this.getCampaignDetails(params['id'])
     });
   }
 
   getCampaignDetails(id) {
-    this.campaign.getCampaign(id)
+    this.campaignDetailService.getCampaign(id)
       .subscribe((campaign) => {
         this.campaign = campaign;
       })

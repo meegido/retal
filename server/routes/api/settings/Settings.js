@@ -12,7 +12,7 @@ var settingsSchema = new Schema({
     type: String,
     enum: ['A mano', 'A máquina', 'En seco']
   },
-  'fabricId' : {
+  'campaignId' : {
 	 	type: Schema.Types.ObjectId,
 	 	ref: '{ref}',
 		required: true

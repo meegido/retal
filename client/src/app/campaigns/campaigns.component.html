@@ -2,6 +2,6 @@
 <section class="">
   <article class="" *ngFor="let campaign of campaigns">
     <p>{{ campaign.userId }}</p>
-    <a [routerLink]="['/campaign', campaign._id]">Ver campaña</a>
+    <a [routerLink]="['/campaigns', campaign._id]">Ver campaña</a>
   </article>
 </section>

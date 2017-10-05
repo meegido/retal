@@ -4,7 +4,7 @@ var Schema   = mongoose.Schema;
 var campaignSchema = new Schema({
 	'status': {
 		type: String,
-		enum: ['Borrador', 'Abierta', 'Cerrada']
+		enum: ['abierta', 'cerrada', 'borrador']
 	},
 	'totalPrice': {type: Number, required: true },
 	'totalMeters': Number,

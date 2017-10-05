@@ -11,21 +11,21 @@ const setting = [
     shorten: false,
     ironing: true,
     washed: 'A mano',
-    fabricId: '59d6079fc212474805908479'
+    campaignId: '59d663c92951475dce3505df'
   },
   {
     finalUse: 'Abrigo',
     shorten: false,
     ironing: false,
     washed: 'En seco',
-    fabricId: '59d6079fc21247480590847a'
+    campaignId: '59d663c92951475dce3505e0'
   },
   {
     finalUse: 'Camiseta',
     shorten: false,
     ironing: true,
     washed: 'A máquina',
-    fabricId: '59d6079fc21247480590847b'
+    campaignId: '59d663c92951475dce3505e1'
   },
 
 ]

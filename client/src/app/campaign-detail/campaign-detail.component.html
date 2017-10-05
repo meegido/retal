@@ -1,3 +1,8 @@
-<p>
-  campaign-detail works!
-</p>
+<h1>Detalle campaña</h1>
+<a [routerLink]="['']"> Back to list </a>
+<article>
+  <p>{{ campaign.status }}</p>
+  <p>Precio de {{ campaign.totalMeters }} metros: {{ campaign.totalPrice }}</p>
+  <p>Pedido mínimo: {{ campaign.minimumOrder }}</p>
+  <p>Ya fabricada: {{ campaign.manufactured }}</p>
+</article>

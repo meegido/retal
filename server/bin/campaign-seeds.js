@@ -7,7 +7,7 @@ mongoose.connect('mongodb://localhost/retal')
 
 const campaign = [
   {
-    status: 'draft',
+    status: 'borrador',
     totalPrice: 4000,
     totalMeters: 100,
     minimumOrder: 10,
@@ -19,7 +19,7 @@ const campaign = [
     userId: "59d550033b7fe739107310ae"
   },
   {
-    status: 'open',
+    status: 'abierta',
     totalPrice: 8000,
     totalMeters: 150,
     minimumOrder: 20,
@@ -32,7 +32,7 @@ const campaign = [
 
   },
   {
-    status: 'closed',
+    status: 'cerrada',
     totalPrice: 12000,
     totalMeters: 120,
     minimumOrder: 20,

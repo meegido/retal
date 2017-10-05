@@ -68,6 +68,9 @@ app.use('/api', campaignApi);
 const authRoutes = require('./routes/api/auth');
 app.use('/api/auth', authRoutes);
 
+const fabricApi = require('./routes/api/fabric/fabricRoutes');
+app.use('/api', fabricApi);
+
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

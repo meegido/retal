@@ -18,6 +18,7 @@ import { CampaignService } from './services/campaign.service';
 import { CampaignDetailService } from './services/campaign-detail.service';
 import { FabricsComponent } from './fabrics/fabrics.component';
 import { SettingsComponent } from './settings/settings.component';
+import { FabricDetailComponent } from './fabric-detail/fabric-detail.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { SettingsComponent } from './settings/settings.component';
     CampaignsComponent,
     CampaignDetailComponent,
     FabricsComponent,
-    SettingsComponent
+    SettingsComponent,
+    FabricDetailComponent
   ],
   imports: [
     BrowserModule,

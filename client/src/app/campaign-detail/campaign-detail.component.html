@@ -1,5 +1,4 @@
 <h1>Detalle campaña</h1>
-{{ campaign | json }}
 
 <br>
 <a [routerLink]="['']"> Back to list </a>
@@ -9,3 +8,6 @@
   <p>Pedido mínimo: {{ campaign.minimumOrder }}</p>
   <p>Ya fabricada: {{ campaign.manufactured }}</p>
 </article>
+
+
+<app-fabric-detail [fabric]="fabricId"></app-fabric-detail>

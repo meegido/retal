@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CampaignsComponent } from '../campaigns/campaigns.component'
 import { CampaignService } from '../services/campaign.service';
 
 @Component({
@@ -11,7 +10,6 @@ export class FabricsComponent implements OnInit {
 
   fabrics;
   constructor(
-    private campaings:CampaignsComponent,
     public campaignService:CampaignService
   ) { }
 

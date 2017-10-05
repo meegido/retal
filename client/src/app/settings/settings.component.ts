@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CampaignsComponent } from '../campaigns/campaigns.component';
 import { CampaignService } from '../services/campaign.service';
 
 @Component({
@@ -11,7 +10,6 @@ export class SettingsComponent implements OnInit {
 
   settings;
   constructor(
-    private campaigns:CampaignsComponent,
     public campaignService:CampaignService
   ) { }
 

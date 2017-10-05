@@ -11,7 +11,6 @@ import { CampaignDetailService } from '../services/campaign-detail.service'
 export class CampaignDetailComponent implements OnInit {
 
   campaign;
-  fabric;
   constructor(
     private router:Router,
     private route:ActivatedRoute,
@@ -19,7 +18,7 @@ export class CampaignDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-    //  console.log(`El parametro recibido es: ${params['id']}`);
+      console.log(`El parametro campaña recibido es: ${params['id']}`);
       this.getCampaignDetails(params['id'])
     });
   }

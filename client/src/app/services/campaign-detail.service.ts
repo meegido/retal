@@ -16,4 +16,9 @@ export class CampaignDetailService {
   return this.http.get(`${this.BASE_URL}/api/campaigns/${id}`)
     .map((res) => res.json());
   }
+
+  getFabric(id) {
+  return this.http.get(`${this.BASE_URL}/api/fabrics/${id}`)
+    .map((res) => res.json());
+  }
 }

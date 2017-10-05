@@ -12,6 +12,8 @@ import { LoginformComponent } from './loginform/loginform.component';
 import { SignupformComponent } from './signupform/signupform.component';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
+import { CampaignsComponent } from './campaigns/campaigns.component';
+import { CampaignDetailComponent } from './campaign-detail/campaign-detail.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { LogoutComponent } from './logout/logout.component';
     LoginformComponent,
     SignupformComponent,
     HomeComponent,
-    LogoutComponent
+    LogoutComponent,
+    CampaignsComponent,
+    CampaignDetailComponent
   ],
   imports: [
     BrowserModule,

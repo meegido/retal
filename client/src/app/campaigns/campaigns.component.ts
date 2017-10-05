@@ -14,7 +14,7 @@ export class CampaignsComponent implements OnInit {
   constructor(public campaignService:CampaignService) { }
 
   ngOnInit() {
-    this.campaignService.getList()
+    this.campaignService.getListCampaigns()
     .subscribe(
       (data) => {
         this.campaigns = data

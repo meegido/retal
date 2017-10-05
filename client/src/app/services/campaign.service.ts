@@ -11,8 +11,13 @@ export class CampaignService {
 
     constructor(private http: Http) { }
 
-    getList() {
+    getListCampaigns() {
       return this.http.get(`${this.BASE_URL}/api/campaigns`)
+        .map((res) => res.json());
+    }
+
+    getListFabrics() {
+      return this.http.get(`${this.BASE_URL}/api/fabrics`)
         .map((res) => res.json());
     }
 

@@ -14,8 +14,10 @@ import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { CampaignDetailComponent } from './campaign-detail/campaign-detail.component';
+import { CampaignService } from './services/campaign.service';
 import { CampaignDetailService } from './services/campaign-detail.service';
 import { FabricsComponent } from './fabrics/fabrics.component';
+
 
 @NgModule({
   declarations: [
@@ -34,7 +36,12 @@ import { FabricsComponent } from './fabrics/fabrics.component';
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService, IsLoggedInService, CampaignDetailService],
+  providers: [
+    AuthService,
+    IsLoggedInService,
+    CampaignService,
+    CampaignDetailService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

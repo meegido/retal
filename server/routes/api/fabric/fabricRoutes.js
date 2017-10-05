@@ -1,6 +1,6 @@
-var express = require('express');
-var router = express.Router();
-var fabricController = require('./fabricController');
+const express = require('express');
+const router = express.Router();
+const fabricController = require('./fabricController');
 
 router.get('/fabrics', fabricController.list);
 router.get('/fabrics/:id', fabricController.show);

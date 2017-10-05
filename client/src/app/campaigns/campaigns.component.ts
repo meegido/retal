@@ -9,8 +9,8 @@ import { CampaignService } from '../services/campaign.service'
   providers: [CampaignService]
 })
 export class CampaignsComponent implements OnInit {
-  campaigns;
 
+  campaigns;
   constructor(public campaignService:CampaignService) { }
 
   ngOnInit() {

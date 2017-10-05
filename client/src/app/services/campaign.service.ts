@@ -21,4 +21,9 @@ export class CampaignService {
         .map((res) => res.json());
     }
 
+    getListSettings() {
+      return this.http.get(`${this.BASE_URL}/api/settings`)
+        .map((res) => res.json());
+    }
+
 }

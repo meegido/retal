@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CampaignsComponent } from '../campaigns/campaigns.component'
-import { CampaignService } from '../services/campaign.service'
+import { CampaignService } from '../services/campaign.service';
 
 @Component({
   selector: 'app-fabrics',

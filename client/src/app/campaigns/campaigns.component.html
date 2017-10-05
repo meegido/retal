@@ -1,9 +1,13 @@
 <h1>Campañas</h1>
 <section class="">
   <article class="" *ngFor="let campaign of campaigns">
-    <p>{{ campaign.status }}</p>
+    <h2>{{ campaign.status }}</h2>
+    <p>El precio de {{ campaign.totalMeters }} metros es: {{ campaign.totalPrice }}€</p>
+    <p>{{ campaign.startAt }}</p>
+    <p>{{ campaign.endsAt }}</p>
     <a [routerLink]="['/campaigns', campaign._id]">Ver campaña</a>
   </article>
 </section>
 
 <app-fabrics></app-fabrics>
+<app-settings></app-settings>

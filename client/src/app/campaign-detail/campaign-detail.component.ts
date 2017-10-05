@@ -11,6 +11,7 @@ import { CampaignDetailService } from '../services/campaign-detail.service'
 export class CampaignDetailComponent implements OnInit {
 
   campaign;
+  fabric;
   constructor(
     private router:Router,
     private route:ActivatedRoute,

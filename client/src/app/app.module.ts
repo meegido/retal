@@ -15,6 +15,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { CampaignDetailComponent } from './campaign-detail/campaign-detail.component';
 import { CampaignDetailService } from './services/campaign-detail.service';
+import { FabricsComponent } from './fabrics/fabrics.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CampaignDetailService } from './services/campaign-detail.service';
     HomeComponent,
     LogoutComponent,
     CampaignsComponent,
-    CampaignDetailComponent
+    CampaignDetailComponent,
+    FabricsComponent
   ],
   imports: [
     BrowserModule,

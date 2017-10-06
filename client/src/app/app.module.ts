@@ -15,6 +15,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { CampaignService } from './services/campaign.service';
 import { GetOneService } from './services/get-one.service';
+import { CampaignItemComponent } from './campaign-item/campaign-item.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { GetOneService } from './services/get-one.service';
     HomeComponent,
     LogoutComponent,
     CampaignsComponent,
+    CampaignItemComponent,
   ],
   imports: [
     BrowserModule,

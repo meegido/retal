@@ -21,4 +21,9 @@ export class CampaignDetailService {
   return this.http.get(`${this.BASE_URL}/api/fabrics/${id}`)
     .map((res) => res.json());
   }
+
+  getSetting(id) {
+  return this.http.get(`${this.BASE_URL}/api/settings/${id}`)
+    .map((res) => res.json());
+  }
 }

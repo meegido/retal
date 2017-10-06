@@ -15,7 +15,6 @@ import { LogoutComponent } from './logout/logout.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { CampaignService } from './services/campaign.service';
 import { CampaignDetailService } from './services/campaign-detail.service';
-import { SettingsComponent } from './settings/settings.component';
 
 
 @NgModule({
@@ -26,7 +25,6 @@ import { SettingsComponent } from './settings/settings.component';
     HomeComponent,
     LogoutComponent,
     CampaignsComponent,
-    SettingsComponent
   ],
   imports: [
     BrowserModule,

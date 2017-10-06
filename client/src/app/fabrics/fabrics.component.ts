@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CampaignService } from '../services/campaign.service';
 
 @Component({
@@ -8,7 +8,9 @@ import { CampaignService } from '../services/campaign.service';
 })
 export class FabricsComponent implements OnInit {
 
-  fabrics;
+@Input()
+  fabrics:object;
+
   constructor(
     public campaignService:CampaignService
   ) { }

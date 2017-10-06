@@ -10,8 +10,6 @@ import { CampaignDetailComponent } from '../campaign-detail/campaign-detail.com
   styleUrls: ['./fabric-detail.component.css']
 })
 export class FabricDetailComponent implements OnInit {
-
-  @Input()
   fabric;
 
   constructor(

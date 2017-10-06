@@ -15,7 +15,7 @@ const fabric = [
     'weight': 'Media',
     'structure': 'Fluída',
     'dye': 'Inmersión',
-    'campaignId' : '59d663c92951475dce3505df'
+    'campaignId' : '59d74e7b351c6984dfdee9eb'
   },
   {
     'typeName': 'Lino',
@@ -26,7 +26,7 @@ const fabric = [
     'weight': 'Media',
     'structure': 'Media',
     'dye': 'Inmersión',
-    'campaignId' : '59d663c92951475dce3505e0'
+    'campaignId' : '59d74e7b351c6984dfdee9ec'
   },
   {
     'typeName': 'Oxford',
@@ -37,7 +37,7 @@ const fabric = [
     'weight': 'Media',
     'structure': 'Media',
     'dye': 'No tintado',
-    'campaignId' : '59d663c92951475dce3505e1'
+    'campaignId' : '59d74e7b351c6984dfdee9ed'
   }
 ]
 

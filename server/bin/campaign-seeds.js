@@ -16,7 +16,7 @@ const campaign = [
     manufactured: true,
     // startAt: '12/09/2017',
     // endsAt: '27/09/2017'
-    userId: "59d550033b7fe739107310ae"
+    userId: "59d74d214a9687849b60118d"
   },
   {
     status: 'abierta',
@@ -28,7 +28,7 @@ const campaign = [
     manufactured: true,
     // startAt: '10/12/2017'
     // endsAt: '25/09/2017'
-    userId: "59d550033b7fe739107310af"
+    userId: "59d74d214a9687849b60118e"
 
   },
   {
@@ -41,7 +41,7 @@ const campaign = [
     manufactured: false,
     // startAt: '12/03/2018'
     // endsAt: '27/03/2018'
-    userId: "59d550033b7fe739107310b0"
+    userId: "59d74d214a9687849b60118c"
   }
 ]
 

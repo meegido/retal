@@ -6,12 +6,9 @@
     <li>El precio de {{ campaign.totalMeters }} metros es: {{ campaign.totalPrice }}€</li>
     <li>{{ campaign.startAt }}</li>
     <li>{{ campaign.endsAt }}</li>
-    <app-fabrics></app-fabrics>
     <!-- <app-fabrics-resume></app-fabrics-resume> -->
   </ul>
     <a [routerLink]="['/campaigns', campaign._id]">Ver campaña</a>
   </article>
 </section>
-
-<hr>
-<app-settings></app-settings>
+<!-- <app-settings-resume></app-settings-resume> -->

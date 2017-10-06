@@ -6,7 +6,7 @@ import 'rxjs/add/operator/catch';
 
 
 @Injectable()
-export class CampaignDetailService {
+export class GetOneService {
 
   BASE_URL: string = 'http://localhost:3000';
 

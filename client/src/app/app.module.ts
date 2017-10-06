@@ -14,7 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { CampaignService } from './services/campaign.service';
-import { CampaignDetailService } from './services/campaign-detail.service';
+import { GetOneService } from './services/get-one.service';
 
 
 @NgModule({
@@ -36,7 +36,7 @@ import { CampaignDetailService } from './services/campaign-detail.service';
     AuthService,
     IsLoggedInService,
     CampaignService,
-    CampaignDetailService
+    GetOneService
   ],
   bootstrap: [AppComponent]
 })

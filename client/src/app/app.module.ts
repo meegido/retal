@@ -13,7 +13,6 @@ import { SignupformComponent } from './signupform/signupform.component';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
-import { CampaignDetailComponent } from './campaign-detail/campaign-detail.component';
 import { CampaignService } from './services/campaign.service';
 import { CampaignDetailService } from './services/campaign-detail.service';
 import { SettingsComponent } from './settings/settings.component';
@@ -27,7 +26,6 @@ import { SettingsComponent } from './settings/settings.component';
     HomeComponent,
     LogoutComponent,
     CampaignsComponent,
-    CampaignDetailComponent,
     SettingsComponent
   ],
   imports: [

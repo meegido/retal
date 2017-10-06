@@ -16,7 +16,6 @@ import { CampaignsComponent } from './campaigns/campaigns.component';
 import { CampaignDetailComponent } from './campaign-detail/campaign-detail.component';
 import { CampaignService } from './services/campaign.service';
 import { CampaignDetailService } from './services/campaign-detail.service';
-import { FabricsComponent } from './fabrics/fabrics.component';
 import { SettingsComponent } from './settings/settings.component';
 import { FabricDetailComponent } from './fabric-detail/fabric-detail.component';
 
@@ -30,7 +29,6 @@ import { FabricDetailComponent } from './fabric-detail/fabric-detail.component';
     LogoutComponent,
     CampaignsComponent,
     CampaignDetailComponent,
-    FabricsComponent,
     SettingsComponent,
     FabricDetailComponent
   ],

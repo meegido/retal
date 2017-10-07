@@ -7,7 +7,7 @@ const debug = require('debug')("retal:"+path.basename(__filename).split('.')[0])
 const authRoutes = express.Router();
 
 authRoutes.post('/signup', (req, res, next) => {
-  const {username, email, password} = req.body;
+  const {username, email, password, userType} = req.body;
 
   if (!username || !password || !email)
     return res.status(400).json({ message: 'Provide username and password' });
@@ -24,6 +24,7 @@ authRoutes.post('/signup', (req, res, next) => {
     const theUser = new User({
       username,
       email,
+      userType,
       password: hashPass
     });
     return theUser.save()

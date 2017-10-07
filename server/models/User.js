@@ -5,11 +5,8 @@ const Schema   = mongoose.Schema;
 const userSchema = new Schema({
   username: String,
   password:{ type: String, required: true },
-  email: { type: String, required: true }
-  // files: [{
-  //   pic_path: String,
-  //   pic_name: String
-  // }]
+  email: { type: String, required: true },
+  userType: {type: String, enum: ['maker', 'buyer']}
 });
 
 userSchema.set('timestamps', true);

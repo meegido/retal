@@ -62,11 +62,14 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-const campaignApi = require('./routes/api/campaign/campaignRoutes');
-app.use('/api', campaignApi);
+const userApi = require('./models/userRoutes');
+app.use('/users', userApi);
 
 const authRoutes = require('./routes/api/auth');
 app.use('/api/auth', authRoutes);
+
+const campaignApi = require('./routes/api/campaign/campaignRoutes');
+app.use('/api', campaignApi);
 
 const fabricApi = require('./routes/api/fabric/fabricRoutes');
 app.use('/api', fabricApi);

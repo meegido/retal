@@ -40,11 +40,11 @@ module.exports = {
   },
 
   update: (req, res) => {
-    const { typeName, cropOrigin, prodOrigin, fiber, colour, weight,
-      structure, dye, finalUse, shorten, iron, washed, maker } = req.params.body;
+    const { typeName, origin, fiber, colour, weight,
+      structure, dye, finalUse, shorten, iron, washed, maker } = req.body;
 
-    fabric.findByIdAndUpdate(req.params.id, {
-      $set: { typeName, cropOrigin, prodOrigin, fiber, colour, weight,
+    fabricModel.findByIdAndUpdate(req.params.id, {
+      $set: { typeName, origin, fiber, colour, weight,
         structure, dye, finalUse, shorten, iron, washed, maker }
       }, { new:true }).exec()
         .then(fabric => res.status(200).json(fabric))
@@ -54,6 +54,9 @@ module.exports = {
   remove: (req, res) => {
     fabricModel.findByIdAndRemove(req.params.id)
       .then(fabric => res.status(200).json(fabric))
-      .catch(error => res.status(500).json({ message: 'Error when deleting the fabric.', error: err }))
+      .catch(e => res.status(500).json({
+        message: 'Error when deleting the fabric.',
+        error: e.message
+      }))
   }
 }

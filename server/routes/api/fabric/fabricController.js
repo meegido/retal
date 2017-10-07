@@ -10,6 +10,7 @@ module.exports = {
         error: e.error
       }));
   },
+  
   show: (req, res) => {
     const id = req.params.id;
     fabricModel.findById(id).populate('maker')
@@ -29,7 +30,7 @@ module.exports = {
     });
 
     fabric.save()
-      .then( fabric => res.status(200).json({
+      .then(fabric => res.status(200).json({
         message: 'New fabric created!',
         fabric: fabric
       }))

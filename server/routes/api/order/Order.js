@@ -3,7 +3,8 @@ const Schema   = mongoose.Schema;
 
 const orderSchema = new Schema({
     'meters': Number,
-    'userId': { type: Schema.Types.ObjectId, ref: 'User' }
+    'maker': { type: Schema.Types.ObjectId, ref: 'User' },
+    'buyer': [{ type: Schema.Types.ObjectId, ref: 'User'}]
 })
 orderSchema.set('timestamps', true);
 

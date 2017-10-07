@@ -2,7 +2,6 @@ mongoose = require('mongoose');
 const campaignModel = require('./campaignModel.js');
 
 module.exports = {
-
   list: (req, res) => {
     campaignModel.find()
       .then(campaigns => res.status(200).json(campaigns))
@@ -23,14 +22,14 @@ module.exports = {
   },
 
   create: (req, res) => {
-    const {status, totalPrice, totalMeters, minimumOrder,
+    const { status, totalPrice, totalMeters, minimumOrder,
       countOrders, metersSoldPerOrder, manufactured,
-      startAt, endAt, userId } = req.body;
+      startAt, endAt } = req.body;
 
     const campaign = new campaignModel({
       status, totalPrice, totalMeters, minimumOrder,
       countOrders, metersSoldPerOrder, manufactured,
-      startAt, endAt, userId
+      startAt, endAt
     });
 
     campaign.save()

@@ -8,9 +8,7 @@ const fabricSchema = new Schema({
       'Franela', 'Lino', 'Muselina', 'Lona', 'Loneta',
       'Denim', 'Sarga', 'Pana', 'Gasa', 'Lamé', 'Punto']},
 
-  'cropOrigin': String,
-
-  'prodOrigin': String,
+  'origin': String,
 
   'fiber': {
     type: String,
@@ -29,17 +27,18 @@ const fabricSchema = new Schema({
   'dye': {
     type: String,
     enum: ['Inmersión', 'Estampado', 'No tintado']},
+
   'finalUse': {
     type: String,
     enum: ['Camisa', 'Vestido', 'Pantalón', 'Abrigo', 'Camiseta']
   },
   'shorten': Boolean,
-  'ironing': Boolean,
+  'iron': Boolean,
   'washed': {
     type: String,
     enum: ['A mano', 'A máquina', 'En seco']
   },
-  'userId' : { type: Schema.Types.ObjectId, ref: 'User' }
+  'maker': { type: Schema.Types.ObjectId, ref: 'User' }
   // files: [{
   //   pic_path: String,
   //   pic_name: String

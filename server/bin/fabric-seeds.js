@@ -1,9 +1,20 @@
 const mongoose = require('mongoose')
-const Fabric = require('../routes/api/fabric/Fabric')
+const User = require('../models/User')
+const bcrypt = require('bcrypt')
+const bcryptSalt = 10
 
 mongoose.connect('mongodb://localhost/retal')
   .then(() => console.log('connected to db!'))
 
+const password = '1234'
+const salt     = bcrypt.genSaltSync(bcryptSalt)
+const hashPass = bcrypt.hashSync(password, salt)
+
+const user = new User({
+    username: 'cualquiera',
+    email: 'cualquiera@email.com',
+    password: hashPass
+  })
 
 const fabric = [
   {
@@ -15,7 +26,16 @@ const fabric = [
     'weight': 'Media',
     'structure': 'Fluída',
     'dye': 'Inmersión',
-    'campaignId' : '59d74e7b351c6984dfdee9eb'
+    'typeName': 'Punto',
+    'cropOrigin': 'Andalucia',
+    'prodOrigin': 'Valencia',
+    'fiber': 'Ortiga',
+    'colour': 'Azul',
+    'weight': 'Media',
+    'structure': 'Fluída',
+    'dye': 'Inmersión',
+    'userId' : ''
+
   },
   {
     'typeName': 'Lino',
@@ -26,7 +46,15 @@ const fabric = [
     'weight': 'Media',
     'structure': 'Media',
     'dye': 'Inmersión',
-    'campaignId' : '59d74e7b351c6984dfdee9ec'
+    'typeName': 'Lino',
+    'cropOrigin': 'Cataluña',
+    'prodOrigin': 'Cataluña',
+    'fiber': 'Bambú',
+    'colour': 'Marron',
+    'weight': 'Media',
+    'structure': 'Media',
+    'dye': 'Inmersión',
+    'userId' : ''
   },
   {
     'typeName': 'Oxford',
@@ -37,18 +65,36 @@ const fabric = [
     'weight': 'Media',
     'structure': 'Media',
     'dye': 'No tintado',
-    'campaignId' : '59d74e7b351c6984dfdee9ed'
+    'typeName': 'Oxford',
+    'cropOrigin': 'Galicia',
+    'prodOrigin': 'Anadalucia',
+    'fiber': 'Cáñamo',
+    'colour': 'Rojo',
+    'weight': 'Media',
+    'structure': 'Media',
+    'dye': 'No tintado',
+    'user' : ''
   }
 ]
 
-
-  Fabric.create(fabric, (err, docs) => {
-    if (err) {
-      throw err
-    }
-
-    docs.forEach((fabric) => {
-      console.log(fabric)
-    })
+User.create(user)
+  .then(user => {
+    console.log("user admin/admin created")
+    return Fabric.create(fabrics)
+  })
+  .then((fabric) => {
+    console.log(fabric)
     mongoose.connection.close()
   })
+  .catch(err => console.log(err))
+
+  // Fabric.create(fabric, (err, docs) => {
+  //   if (err) {
+  //     throw err
+  //   }
+  //
+  //   docs.forEach((fabric) => {
+  //     console.log(fabric)
+  //   })
+  //   mongoose.connection.close()
+  // })

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { GetOneService } from '../services/get-one.service'
+import { GetOneService } from '../services/get-one.service';
+// import { FabricItemComponent } from './fabric-item.fabric-item.component'
 
 @Component({
   selector: 'app-campaign-item',

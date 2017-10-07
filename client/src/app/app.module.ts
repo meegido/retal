@@ -16,6 +16,7 @@ import { CampaignsComponent } from './campaigns/campaigns.component';
 import { CampaignService } from './services/campaign.service';
 import { GetOneService } from './services/get-one.service';
 import { CampaignItemComponent } from './campaign-item/campaign-item.component';
+import { FabricItemComponent } from './fabric-item/fabric-item.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { CampaignItemComponent } from './campaign-item/campaign-item.component';
     LogoutComponent,
     CampaignsComponent,
     CampaignItemComponent,
+    FabricItemComponent,
   ],
   imports: [
     BrowserModule,

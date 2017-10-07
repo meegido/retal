@@ -1,7 +1,7 @@
-var mongoose = require('mongoose');
-var Schema   = mongoose.Schema;
+const mongoose = require('mongoose');
+const Schema   = mongoose.Schema;
 
-var fabricSchema = new Schema({
+const fabricSchema = new Schema({
   'typeName': {
     type: String,
     enum: [ 'Oxford', 'Plisado', 'Tafetán', 'Satén',
@@ -29,12 +29,17 @@ var fabricSchema = new Schema({
   'dye': {
     type: String,
     enum: ['Inmersión', 'Estampado', 'No tintado']},
-
-  'campaignId' : {
-	 	type: Schema.Types.ObjectId,
-	 	ref: '{ref}',
-		required: true
-	}
+  'finalUse': {
+    type: String,
+    enum: ['Camisa', 'Vestido', 'Pantalón', 'Abrigo', 'Camiseta']
+  },
+  'shorten': Boolean,
+  'ironing': Boolean,
+  'washed': {
+    type: String,
+    enum: ['A mano', 'A máquina', 'En seco']
+  },
+  'userId' : { type: Schema.Types.ObjectId, ref: 'User' }
   // files: [{
   //   pic_path: String,
   //   pic_name: String

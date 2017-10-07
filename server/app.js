@@ -71,8 +71,8 @@ app.use('/api/auth', authRoutes);
 const fabricApi = require('./routes/api/fabric/fabricRoutes');
 app.use('/api', fabricApi);
 
-const settingsApi = require('./routes/api/settings/settingsRoutes');
-app.use('/api', settingsApi)
+const orderApi = require('./routes/api/order/orderRoutes');
+app.use('/api', orderApi)
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

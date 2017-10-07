@@ -1,11 +1,13 @@
 <h1>Campaña</h1>
+{{ campaign | json }}
 <section class="">
   <article>
   <ul>
     <li>{{ campaign.status }}</li>
     <li>Logica: El precio de {{ campaign.totalMeters }} metros es: {{ campaign.totalPrice }}€</li>
     <li>Tiempo que queda para que termine la campaña: logica</li>
-    <!-- <app-fabrics-item></app-fabrics-item> -->
   </ul>
   </article>
+  <hr>
+  <app-fabric-item></app-fabric-item>
 </section>

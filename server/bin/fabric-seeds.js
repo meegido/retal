@@ -24,6 +24,7 @@ const fabric = [
   {
     'typeName': 'Oxford',
     'origin': 'Galicia',
+    'description': 'No es oxford la ciudad, es una tela',
     'fiber': 'Lana',
     'colour': 'Rojo',
     'weight': 'Media',
@@ -39,6 +40,7 @@ const fabric = [
   {
     'typeName': 'Muselina',
     'cropOrigin': 'Galicia',
+    'description': 'La muselina gatuna de los montes de galicia',
     'fiber': 'PET',
     'colour': 'Violeta',
     'weight': 'Ligera',
@@ -54,6 +56,7 @@ const fabric = [
   {
     'typeName': 'Franela',
     'origin': 'Galicia',
+    'description': 'La franela más suavecita que te hayas puesto y ecológica!',
     'fiber': 'Ortiga',
     'colour': 'Verde',
     'weight': 'Media',
@@ -69,6 +72,7 @@ const fabric = [
   {
     'typeName': 'Punto',
     'origin': 'Andalucía',
+    'description': 'El punto hecho con más cariño que hayas visto',
     'fiber': 'Soja',
     'colour': 'Marrón',
     'weight': 'Ligera',
@@ -84,6 +88,7 @@ const fabric = [
   {
     'typeName': 'Denim',
     'origin': 'Andalucía',
+    'description': 'Reciclado, ha tenido dos vidas',
     'fiber': 'Algodón',
     'colour': 'Negro',
     'weight': 'Media',

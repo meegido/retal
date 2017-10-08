@@ -11,6 +11,7 @@ import { CampaignService } from '../services/campaign.service'
 export class CampaignsComponent implements OnInit {
 
   campaigns;
+
   constructor(public campaignService:CampaignService) { }
 
   ngOnInit() {

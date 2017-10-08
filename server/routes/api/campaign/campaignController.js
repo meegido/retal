@@ -3,7 +3,7 @@ const campaignModel = require('./campaignModel.js');
 
 module.exports = {
   list: (req, res) => {
-    campaignModel.find()
+    campaignModel.find().populate('maker buyer fabric order')
       .then(campaigns => res.status(200).json(campaigns))
       .catch(e => res.status(500).json({
         message: 'Error when getting campaign.',
@@ -13,7 +13,7 @@ module.exports = {
 
   show: (req, res) => {
     const id = req.params.id;
-    campaignModel.findById(id)
+    campaignModel.findById(id).populate('maker buyer fabric order')
       .then(campaign => res.status(200).json(campaign))
       .catch(e => res.status(500).json({
         message: 'Error when getting campaign.',
@@ -22,14 +22,13 @@ module.exports = {
   },
 
   create: (req, res) => {
-    const { status, totalPrice, totalMeters, minimumOrder,
-      countOrders, metersSoldPerOrder, manufactured,
-      startAt, endAt } = req.body;
+    const { status, meterPrice, totalMeters, revenue, minimumOrder,
+      startAt, endsAt, maker, buyer, fabric, order
+     } = req.body;
 
     const campaign = new campaignModel({
-      status, totalPrice, totalMeters, minimumOrder,
-      countOrders, metersSoldPerOrder, manufactured,
-      startAt, endAt
+      status, meterPrice, totalMeters, revenue, minimumOrder,
+        startAt, endsAt, maker, buyer, fabric, order
     });
 
     campaign.save()
@@ -44,17 +43,13 @@ module.exports = {
   },
 
   update: (req, res) => {
-    const { status, totalPrice, totalMeters, minimumOrder,
-      countOrders, metersSoldPerOrder, manufactured,
-      startAt, endAt, userId } = req.body;
+    const { status, meterPrice, totalMeters, revenue, minimumOrder,
+      startAt, endsAt, maker, buyer, fabric, order } = req.body;
 
-    const updates = {
-      status, totalPrice, totalMeters, minimumOrder,
-      countOrders, metersSoldPerOrder, manufactured,
-      startAt, endAt, userId
-    }
-
-    campaignModel.findByIdAndUpdate(req.params.id, updates, {new:true})
+    campaignModel.findByIdAndUpdate(req.params.id, {
+      $set: {status, meterPrice, totalMeters, revenue, minimumOrder,
+        startAt, endsAt, maker, buyer, fabric, order }
+    }, {new:true})
       .then(campaign => res.status(200).json(campaign))
       .catch(e => res.status(500).json({
         message: 'Error when getting campaign',
@@ -64,8 +59,11 @@ module.exports = {
 
 
   remove: (req, res) => {
-    campaignModel.findByIdAndRemove(req.params.id)
+    const id = req.params.id;
+    campaignModel.findByIdAndRemove(id)
       .then(campaign => res.status(200).json(campaign))
-      .catch(error => res.status(500).json({ message: 'Error when deleting the campaign.', error: err }))
+      .catch(error => res.status(500).json({
+        message: 'Error when deleting the campaign.',
+        error: e.message }))
   }
 };

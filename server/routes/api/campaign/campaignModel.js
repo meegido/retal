@@ -6,15 +6,16 @@ const campaignSchema = new Schema({
 		type: String,
 		enum: ['abierta', 'cerrada', 'borrador']
 	},
-	'meterPrice': {type: Number, required: true },
-	'totalMeters': {type: Number, required: true },
+	'meterPrice': {type: Number },
+	'totalMeters': {type: Number },
 	'revenue': { type: Number, default: 0 },
 	'minimumOrder' : { type: Number, default: 0 },
 	'startAt': Date,
 	'endsAt': Date,
-	'userId' : { type: Schema.Types.ObjectId, ref: 'User', required: true },
-	'fabricId': { type: Schema.Types.ObjectId, ref: 'Fabric', required: true },
-	'orderId': [ { type: Schema.Types.ObjectId, ref: 'Order', required: true } ]
+	'maker': { type: Schema.Types.ObjectId, ref: 'User' },
+	'buyer': [{ type: Schema.Types.ObjectId, ref: 'User' }],
+	'fabric': { type: Schema.Types.ObjectId, ref: 'Fabric' },
+	'order': [{ type: Schema.Types.ObjectId, ref: 'Order' }]
 });
 
 campaignSchema.set('timestamps', true);

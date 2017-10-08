@@ -10,7 +10,7 @@ module.exports = {
         error: e.error
       }));
   },
-  
+
   show: (req, res) => {
     const id = req.params.id;
     fabricModel.findById(id).populate('maker')
@@ -49,7 +49,10 @@ module.exports = {
         structure, dye, finalUse, shorten, iron, washed, maker }
       }, { new:true }).exec()
         .then(fabric => res.status(200).json(fabric))
-        .catch(e => res.status(500).json('Error when you try to update the order'));
+        .catch(e => res.status(500).json({
+          message: 'Error when you try to update the order',
+          error: e.message
+        }));
   },
 
   remove: (req, res) => {

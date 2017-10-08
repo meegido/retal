@@ -10,10 +10,10 @@ module.exports = {
         error: e.message
       }));
   },
-  
+
   show: (req, res) => {
     const id = req.params.id;
-    orderModel.findById(id)
+    orderModel.findById(id).populate('maker buyer')
       .then(order => res.status(200).json(order))
       .catch(e => res.status(500).json({
         message: 'Error when getting order.',

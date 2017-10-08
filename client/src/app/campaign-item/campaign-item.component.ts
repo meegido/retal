@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { FabricsService } from '../services/fabrics.service';
-import { CampaignService } from '../services/campaign.service';
+import { CampaignsService } from '../services/campaigns.service';
 //import { FabricItemComponent } from './fabric-item.fabric-item.component'
 
 @Component({
@@ -17,7 +17,7 @@ export class CampaignItemComponent implements OnInit {
     private router:Router,
     private route:ActivatedRoute,
     private fabricS:FabricsService,
-    private campaignS:CampaignService
+    private campaignS:CampaignsService
   ) { }
 
   ngOnInit() {

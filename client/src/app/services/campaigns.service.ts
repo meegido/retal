@@ -5,7 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 
 @Injectable()
-export class CampaignService {
+export class CampaignsService {
 
   BASE_URL: string = 'http://localhost:3000';
 
@@ -21,5 +21,5 @@ export class CampaignService {
       .map((res) => res.json());
     }
 
-    
+
 }

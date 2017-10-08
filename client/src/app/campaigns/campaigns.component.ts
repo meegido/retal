@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import { CampaignService } from '../services/campaign.service';
+import { CampaignsService } from '../services/campaigns.service';
 import { FabricsService } from '../services/fabrics.service';
 
 @Component({
@@ -11,20 +11,30 @@ import { FabricsService } from '../services/fabrics.service';
 })
 export class CampaignsComponent implements OnInit {
 
-
-  constructor(public campaignS:CampaignService) { }
+  campaigns;
+  fabrics;
+  constructor(
+    private campaignS:CampaignsService,
+    private fabricS:FabricsService
+  ) { }
 
   ngOnInit() {
+    this.fabricS.getListFabrics()
+      .subscribe(fabric => {
+        this.fabrics = fabric;
+      },
+      (err) => {
+        console.log(this.fabrics);
+      });
 
+    this.campaignS.getListCampaigns()
+      .subscribe(campaign => {
+        this.campaigns = campaign;
+      },
+      (err) => {
+        console.log(this.campaigns);
+      });
   }
 
 
   }
-
-  // getRecipesDetails(id) {
-  //   this.dishesService.get(id)
-  //   .subscribe((recipe) => {
-  //     this.recipe = recipe
-  //   })
-  //   this.ingredients = this.ingredientsService.getIngredients()
-  // }

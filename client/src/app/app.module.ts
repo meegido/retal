@@ -13,10 +13,11 @@ import { SignupformComponent } from './signupform/signupform.component';
 import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
-import { CampaignService } from './services/campaign.service';
-import { FabricsService } from './services/fabrics.service';
 import { CampaignItemComponent } from './campaign-item/campaign-item.component';
 import { FabricItemComponent } from './fabric-item/fabric-item.component';
+
+import { CampaignsService } from './services/campaigns.service';
+import { FabricsService } from './services/fabrics.service';
 
 
 @NgModule({
@@ -39,7 +40,7 @@ import { FabricItemComponent } from './fabric-item/fabric-item.component';
   providers: [
     AuthService,
     IsLoggedInService,
-    CampaignService,
+    CampaignsService,
     FabricsService
   ],
   bootstrap: [AppComponent]

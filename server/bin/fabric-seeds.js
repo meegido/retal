@@ -34,7 +34,7 @@ const fabric = [
     'iron': 'Si',
     'washed': 'En seco',
     'files': 'http://propercloth.com/reference/wp-content/uploads/2013/10/300ce67248a9fc767164dac00f7b2b1d.jpg',
-    'maker': '59da0257cf62694ff8df2a64'
+    'maker': '59da023ecf62694ff8df2a63'
   },
   {
     'typeName': 'Muselina',
@@ -49,7 +49,7 @@ const fabric = [
     'iron': 'No',
     'washed': 'En seco',
     'files': 'https://www.voguefabricsstore.com/images/product/P/32112-E.jpg',
-    'maker': '59da0287cf62694ff8df2a65'
+    'maker': '59da0257cf62694ff8df2a64'
   },
   {
     'typeName': 'Franela',
@@ -64,7 +64,7 @@ const fabric = [
     'iron': 'Si',
     'whashed': 'En seco',
     'files': 'http://www.laretalera.es/1484/tela-franela-azul-cuadros-woolies-flannel.jpg',
-    'maker': '59da02bdcf62694ff8df2a66'
+    'maker': '59da0287cf62694ff8df2a65'
   },
   {
     'typeName': 'Punto',
@@ -79,7 +79,22 @@ const fabric = [
     'iron': 'Si',
     'washed': 'A mano',
     'files': 'https://content.sparkstone.co.uk/7/1/images/catalog/i/xl_2673-21109.jpg',
-    'maker': '59da02cccf62694ff8df2a67'
+    'maker': '59da02bdcf62694ff8df2a66'
+  },
+  {
+    'typeName': 'Denim',
+    'origin': 'Andalucía',
+    'fiber': 'Algodón',
+    'colour': 'Negro',
+    'weight': 'Media',
+    'structure': 'Media',
+    'dye': 'Inmersión',
+    'finalUse': 'Chaqueta',
+    'shorten': 'No',
+    'iron': 'Si',
+    'washed': 'A máquina',
+    'files': 'https://cdn.pixabay.com/photo/2013/07/19/12/23/denim-165303_960_720.jpg',
+    'maker': '59da02bdcf62694ff8df2a67'
   }
 ]
 

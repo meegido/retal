@@ -29,11 +29,6 @@ const order = [
     meters: 80,
     maker: '59da02bdcf62694ff8df2a66',
     buyer: '59da02e7cf62694ff8df2a68'
-  },
-  {
-    meters: 40,
-    maker: '59da02cccf62694ff8df2a67',
-    buyer: '59da0318cf62694ff8df2a6a'
   }
 
 ]

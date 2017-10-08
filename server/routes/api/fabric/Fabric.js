@@ -32,7 +32,7 @@ const fabricSchema = new Schema({
 
   'finalUse': {
     type: String,
-    enum: ['Camisa', 'Vestido', 'Falda', 'Pantalón', 'Abrigo', 'Camiseta']
+    enum: ['Camisa', 'Vestido', 'Chaqueta', 'Falda', 'Pantalón', 'Abrigo', 'Camiseta']
   },
   'shorten': {
     type: Boolean,

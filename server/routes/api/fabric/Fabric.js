@@ -10,6 +10,8 @@ const fabricSchema = new Schema({
 
   'origin': String,
 
+  'description': String,
+
   'fiber': {
     type: String,
     enum: [ 'Algodón', 'Cáñamo', 'Bambú', 'Ortiga', 'Seda',

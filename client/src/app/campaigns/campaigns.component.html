@@ -1,21 +1,16 @@
 <h1>Campañas</h1>
-{{ campaigns | json }}
 
 <section class="">
   <article class="" *ngFor="let campaign of campaigns">
   <ul>
-    <li>{{ campaigns.status }}</li>
-    <li>El precio de {{ campaigns.totalMeters }} metros es: {{ campaigns.totalPrice }}€</li>
+    <h1>{{ campaign.fabric.typeName}}</h1>
+    <li>{{ campaign.status }}</li>
+    <li>{{ campaign.maker.username }}</li>
+    <li>{{ campaign.fabric.description }}</li>
+    <li>{{ campaign.totalMeters }}</li>
+    <li>{{ campaign.meterPrice }}€/m</li>
     <li>Tiempo que queda para que termine la campaña: logica</li>
-    <!-- <app-fabrics-resume></app-fabrics-resume> -->
   </ul>
     <a [routerLink]="['/campaigns', campaign._id]">Ver campaña</a>
-  </article>
-  <article class="" *ngFor="let fabric of fabrics">
-  <ul>
-    <li>{{ fabric.typeName }}</li>
-    <li>El precio de {{ fabric.finalUse }} metros es: {{ fabric.whashed }}€</li>
-    <!-- <app-fabrics-resume></app-fabrics-resume> -->
-  </ul>
   </article>
 </section>

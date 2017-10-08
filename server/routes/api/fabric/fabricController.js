@@ -21,11 +21,11 @@ module.exports = {
       }))
   },
   create: (req, res) => {
-    const { typeName, origin, fiber, colour, weight,
+    const { typeName, origin, description, fiber, colour, weight,
       structure, dye, finalUse, shorten, iron, washed, maker } = req.body;
 
     const fabric = new fabricModel({
-      typeName, origin, fiber, colour, weight,
+      typeName, origin, fiber, description, colour, weight,
       structure, dye, finalUse, shorten, iron, washed, maker
     });
 
@@ -41,11 +41,11 @@ module.exports = {
   },
 
   update: (req, res) => {
-    const { typeName, origin, fiber, colour, weight,
+    const { typeName, origin, description, fiber, colour, weight,
       structure, dye, finalUse, shorten, iron, washed, maker } = req.body;
 
     fabricModel.findByIdAndUpdate(req.params.id, {
-      $set: { typeName, origin, fiber, colour, weight,
+      $set: { typeName, origin, description, fiber, colour, weight,
         structure, dye, finalUse, shorten, iron, washed, maker }
       }, { new:true }).exec()
         .then(fabric => res.status(200).json(fabric))

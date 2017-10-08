@@ -7,16 +7,34 @@ mongoose.connect('mongodb://localhost/retal')
 const order = [
   {
     meters: 20,
-    userId: '59d7c31e266345982ebe4deb'
+    maker: '59da0213cf62694ff8df2a62',
+    buyer: ['59da02f6cf62694ff8df2a69', '59da0318cf62694ff8df2a6a']
   },
   {
     meters: 30,
-    userId: '59d7c31e266345982ebe4deb'
+    maker: '59da023ecf62694ff8df2a63',
+    buyer: '59da02f6cf62694ff8df2a69'
   },
   {
     meters: 10,
-    userId: '59d7c31e266345982ebe4deb'
+    maker: '59da0257cf62694ff8df2a64',
+    buyer: ['59da0318cf62694ff8df2a6a', '59da02e7cf62694ff8df2a68']
   },
+  {
+    meters: 50,
+    maker: '59da0287cf62694ff8df2a65',
+    buyer: '59da02e7cf62694ff8df2a68'
+  },
+  {
+    meters: 80,
+    maker: '59da02bdcf62694ff8df2a66',
+    buyer: '59da02e7cf62694ff8df2a68'
+  },
+  {
+    meters: 40,
+    maker: '59da02cccf62694ff8df2a67',
+    buyer: '59da0318cf62694ff8df2a6a'
+  }
 
 ]
 

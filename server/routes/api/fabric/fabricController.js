@@ -22,11 +22,11 @@ module.exports = {
   },
   create: (req, res) => {
     const { typeName, origin, description, fiber, colour, weight,
-      structure, dye, finalUse, shorten, iron, washed, maker } = req.body;
+      structure, dye, finalUse, shorten, iron, washed, maker, files } = req.body;
 
     const fabric = new fabricModel({
       typeName, origin, fiber, description, colour, weight,
-      structure, dye, finalUse, shorten, iron, washed, maker
+      structure, dye, finalUse, shorten, iron, washed, maker, files
     });
 
     fabric.save()
@@ -42,11 +42,11 @@ module.exports = {
 
   update: (req, res) => {
     const { typeName, origin, description, fiber, colour, weight,
-      structure, dye, finalUse, shorten, iron, washed, maker } = req.body;
+      structure, dye, finalUse, shorten, iron, washed, maker, files } = req.body;
 
     fabricModel.findByIdAndUpdate(req.params.id, {
       $set: { typeName, origin, description, fiber, colour, weight,
-        structure, dye, finalUse, shorten, iron, washed, maker }
+        structure, dye, finalUse, shorten, iron, washed, maker, files }
       }, { new:true }).exec()
         .then(fabric => res.status(200).json(fabric))
         .catch(e => res.status(500).json({

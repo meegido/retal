@@ -1,100 +1,95 @@
 const mongoose = require('mongoose')
-const User = require('../models/User')
-const bcrypt = require('bcrypt')
-const bcryptSalt = 10
+const fabricSchema = require('../routes/api/fabric/Fabric')
 
 mongoose.connect('mongodb://localhost/retal')
   .then(() => console.log('connected to db!'))
 
-const password = '1234'
-const salt     = bcrypt.genSaltSync(bcryptSalt)
-const hashPass = bcrypt.hashSync(password, salt)
-
-const user = new User({
-    username: 'cualquiera',
-    email: 'cualquiera@email.com',
-    password: hashPass
-  })
-
 const fabric = [
   {
-    'typeName': 'Punto',
-    'cropOrigin': 'Andalucia',
-    'prodOrigin': 'Valencia',
-    'fiber': 'Ortiga',
-    'colour': 'Azul',
-    'weight': 'Media',
-    'structure': 'Fluída',
-    'dye': 'Inmersión',
-    'typeName': 'Punto',
-    'cropOrigin': 'Andalucia',
-    'prodOrigin': 'Valencia',
-    'fiber': 'Ortiga',
-    'colour': 'Azul',
-    'weight': 'Media',
-    'structure': 'Fluída',
-    'dye': 'Inmersión',
-    'userId' : ''
-
-  },
-  {
-    'typeName': 'Lino',
-    'cropOrigin': 'Cataluña',
-    'prodOrigin': 'Cataluña',
-    'fiber': 'Bambú',
-    'colour': 'Marron',
-    'weight': 'Media',
-    'structure': 'Media',
-    'dye': 'Inmersión',
-    'typeName': 'Lino',
-    'cropOrigin': 'Cataluña',
-    'prodOrigin': 'Cataluña',
-    'fiber': 'Bambú',
-    'colour': 'Marron',
-    'weight': 'Media',
-    'structure': 'Media',
-    'dye': 'Inmersión',
-    'userId' : ''
+    'typeName': 'Tafetán',
+  	'origin': 'Italia',
+  	'description': 'Una tela maravillosa de ovejas de la campiña italiana',
+  	'fiber': 'Algodón',
+  	'colour': 'Crema',
+  	'weight': 'Ligera',
+  	'structure': 'Media',
+  	'dye': 'No tintado',
+  	'finalUse': 'Camiseta',
+  	'shorten': 'Si',
+  	'iron': 'Si',
+  	'washed': 'A mano',
+    'files': 'http://tiendatelas.com/5354-thickbox_default/punto-liso-de-algodon-organico-crudo.jpg',
+  	'maker': '59da0213cf62694ff8df2a62'
   },
   {
     'typeName': 'Oxford',
-    'cropOrigin': 'Galicia',
-    'prodOrigin': 'Anadalucia',
-    'fiber': 'Cáñamo',
+    'origin': 'Galicia',
+    'fiber': 'Lana',
     'colour': 'Rojo',
     'weight': 'Media',
     'structure': 'Media',
     'dye': 'No tintado',
-    'typeName': 'Oxford',
+    'finalUse': 'Falda',
+    'shorten': 'No',
+    'iron': 'Si',
+    'washed': 'En seco',
+    'files': 'http://propercloth.com/reference/wp-content/uploads/2013/10/300ce67248a9fc767164dac00f7b2b1d.jpg',
+    'maker': '59da0257cf62694ff8df2a64'
+  },
+  {
+    'typeName': 'Muselina',
     'cropOrigin': 'Galicia',
-    'prodOrigin': 'Anadalucia',
-    'fiber': 'Cáñamo',
-    'colour': 'Rojo',
+    'fiber': 'PET',
+    'colour': 'Violeta',
+    'weight': 'Ligera',
+    'structure': 'Fluída',
+    'dye': 'Inmersión',
+    'finalUse': 'Camisa',
+    'shorten': 'No',
+    'iron': 'No',
+    'washed': 'En seco',
+    'files': 'https://www.voguefabricsstore.com/images/product/P/32112-E.jpg',
+    'maker': '59da0287cf62694ff8df2a65'
+  },
+  {
+    'typeName': 'Franela',
+    'origin': 'Galicia',
+    'fiber': 'Ortiga',
+    'colour': 'Verde',
     'weight': 'Media',
     'structure': 'Media',
-    'dye': 'No tintado',
-    'user' : ''
+    'dye': 'Inmersión',
+    'finalUse': 'Abrigo',
+    'shorten': 'No',
+    'iron': 'Si',
+    'whashed': 'En seco',
+    'files': 'http://www.laretalera.es/1484/tela-franela-azul-cuadros-woolies-flannel.jpg',
+    'maker': '59da02bdcf62694ff8df2a66'
+  },
+  {
+    'typeName': 'Punto',
+    'origin': 'Andalucía',
+    'fiber': 'Soja',
+    'colour': 'Marrón',
+    'weight': 'Ligera',
+    'structure': 'Fluída',
+    'dye': 'Inmersión',
+    'finalUse': 'Camiseta',
+    'shorten': 'No',
+    'iron': 'Si',
+    'washed': 'A mano',
+    'files': 'https://content.sparkstone.co.uk/7/1/images/catalog/i/xl_2673-21109.jpg',
+    'maker': '59da02cccf62694ff8df2a67'
   }
 ]
 
-User.create(user)
-  .then(user => {
-    console.log("user admin/admin created")
-    return Fabric.create(fabrics)
-  })
-  .then((fabric) => {
-    console.log(fabric)
+  fabricSchema.create(fabric, (err, docs) => {
+    if (err) {
+      throw err
+    }
+
+    docs.forEach((fabric) => {
+      console.log(fabric)
+    })
     mongoose.connection.close()
   })
-  .catch(err => console.log(err))
-
-  // Fabric.create(fabric, (err, docs) => {
-  //   if (err) {
-  //     throw err
-  //   }
-  //
-  //   docs.forEach((fabric) => {
-  //     console.log(fabric)
-  //   })
-  //   mongoose.connection.close()
-  // })

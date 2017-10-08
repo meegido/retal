@@ -14,7 +14,7 @@ const fabricSchema = new Schema({
 
   'fiber': {
     type: String,
-    enum: [ 'Algodón', 'Cáñamo', 'Bambú', 'Ortiga', 'Seda',
+    enum: [ 'Algodón', 'Cáñamo', 'Bambú', 'Ortiga', 'Seda', 'Lana',
       'Mohair', 'Cachemir', 'Alpaca', 'PET', 'Rayón', 'PLA', 'Soja']},
 
   'colour': String,
@@ -32,19 +32,23 @@ const fabricSchema = new Schema({
 
   'finalUse': {
     type: String,
-    enum: ['Camisa', 'Vestido', 'Pantalón', 'Abrigo', 'Camiseta']
+    enum: ['Camisa', 'Vestido', 'Falda', 'Pantalón', 'Abrigo', 'Camiseta']
   },
-  'shorten': Boolean,
-  'iron': Boolean,
+  'shorten': {
+    type: Boolean,
+    enum: ['Si', 'No']
+  },
+  'iron': {
+    type: Boolean,
+    enum: ['Si', 'No']
+  },
   'washed': {
     type: String,
     enum: ['A mano', 'A máquina', 'En seco']
   },
+  'files': [{ type: String, default: '' }],
   'maker': { type: Schema.Types.ObjectId, ref: 'User' }
-  // files: [{
-  //   pic_path: String,
-  //   pic_name: String
-  // }]
+
 })
 
 fabricSchema.set('timestamps', true);

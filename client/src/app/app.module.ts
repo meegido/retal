@@ -14,7 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { LogoutComponent } from './logout/logout.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { CampaignService } from './services/campaign.service';
-import { GetOneService } from './services/get-one.service';
+import { FabricsService } from './services/fabrics.service';
 import { CampaignItemComponent } from './campaign-item/campaign-item.component';
 import { FabricItemComponent } from './fabric-item/fabric-item.component';
 
@@ -40,7 +40,7 @@ import { FabricItemComponent } from './fabric-item/fabric-item.component';
     AuthService,
     IsLoggedInService,
     CampaignService,
-    GetOneService
+    FabricsService
   ],
   bootstrap: [AppComponent]
 })

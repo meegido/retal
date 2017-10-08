@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { GetOneService } from '../services/get-one.service';
-// import { FabricItemComponent } from './fabric-item.fabric-item.component'
+import { FabricsService } from '../services/fabrics.service';
+import { CampaignService } from '../services/campaign.service';
+//import { FabricItemComponent } from './fabric-item.fabric-item.component'
 
 @Component({
   selector: 'app-campaign-item',
@@ -15,7 +16,8 @@ export class CampaignItemComponent implements OnInit {
   constructor(
     private router:Router,
     private route:ActivatedRoute,
-    private getOne:GetOneService
+    private fabricS:FabricsService,
+    private campaignS:CampaignService
   ) { }
 
   ngOnInit() {
@@ -26,7 +28,7 @@ export class CampaignItemComponent implements OnInit {
   }
 
   getCampaignItem(id) {
-    this.getOne.getCampaign(id)
+    this.campaignS.getCampaign(id)
     .subscribe((campaign) => {
       this.campaign = campaign
     })

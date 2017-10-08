@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { GetOneService } from '../services/get-one.service';
+import { FabricsService } from '../services/fabrics.service';
 import { CampaignService } from '../services/campaign.service';
 
 @Component({
@@ -16,8 +16,8 @@ export class FabricItemComponent implements OnInit {
   constructor(
     private router:Router,
     private route:ActivatedRoute,
-    private getOne: GetOneService,
-    private campaignService: CampaignService
+    private fabricS: FabricsService,
+    private campaignS: CampaignService
   ) { }
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class FabricItemComponent implements OnInit {
   }
 
   fabricItem(id){
-    this.getOne.getFabric(id)
+    this.fabricS.getFabric(id)
       .subscribe((fabric) => {
         this.fabric = fabric;
       });

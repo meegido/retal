@@ -1,27 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import { CampaignService } from '../services/campaign.service'
+import { CampaignService } from '../services/campaign.service';
+import { FabricsService } from '../services/fabrics.service';
 
 @Component({
   selector: 'app-campaign',
   templateUrl: './campaigns.component.html',
   styleUrls: ['./campaigns.component.css'],
-  providers: [CampaignService]
+  providers: [FabricsService]
 })
 export class CampaignsComponent implements OnInit {
 
-  campaigns;
 
-  constructor(public campaignService:CampaignService) { }
+  constructor(public campaignS:CampaignService) { }
 
   ngOnInit() {
-    this.campaignService.getListCampaigns()
-    .subscribe(
-      (data) => {
-        this.campaigns = data
-      },
-      (err) => {
-        console.log(this.campaigns);
-      });
-    }
+
   }
+
+
+  }
+
+  // getRecipesDetails(id) {
+  //   this.dishesService.get(id)
+  //   .subscribe((recipe) => {
+  //     this.recipe = recipe
+  //   })
+  //   this.ingredients = this.ingredientsService.getIngredients()
+  // }

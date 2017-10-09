@@ -1,6 +1,6 @@
 <h1>Campañas</h1>
-<section class="">
-  <article class="" *ngFor="let campaign of campaigns">
+<section>
+  <article *ngFor="let campaign of campaigns">
     <img [src]="campaign.fabric.files" height="100"/>
     <h1>{{ campaign.fabric.typeName }}</h1>
   <ul>

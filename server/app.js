@@ -35,9 +35,7 @@ app.use(cors(corsOptions));
 
 app.locals.title = 'Retal';
 
-app.use((req, res, next) => {
-  res.sendfile(__dirname + '/public/index.html');
-});
+
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
@@ -74,6 +72,10 @@ app.use('/api', fabricApi);
 
 const orderApi = require('./routes/api/order/orderRoutes');
 app.use('/api', orderApi)
+
+app.use((req, res, next) => {
+  res.sendfile(__dirname + '/public/index.html');
+});
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

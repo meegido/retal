@@ -8,10 +8,12 @@ const BASEURL = environment.BASEURL + "/api/auth";
 
 @Injectable()
 export class AuthService {
+  public BASEURL = environment.BASEURL;
+  private options = {withCredentials:true};
 
   private user:object;
   private userLoginEvent:EventEmitter<any> = new EventEmitter<any>();
-  private options = {withCredentials:true};
+
 
   constructor(private http: Http) {
     this.isLoggedIn().subscribe();

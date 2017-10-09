@@ -3,23 +3,26 @@ import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
+import { environment }  from '../../environments/environment';
+
+const BASEURL = environment.BASEURL;
 
 @Injectable()
 export class CampaignsService {
+  public BASEURL = environment.BASEURL;
+  private options = { withCredentials: true };
 
-  BASE_URL: string = 'http://localhost:3000';
+  constructor(private http: Http) { }
 
-    constructor(private http: Http) { }
-
-    getListCampaigns() {
-      return this.http.get(`${this.BASE_URL}/api/campaigns`)
-        .map((res) => res.json());
-    }
-
-    getCampaign(id) {
-    return this.http.get(`${this.BASE_URL}/api/campaigns/${id}`)
+  getListCampaigns() {
+    return this.http.get(`${this.BASEURL}/api/campaigns`)
       .map((res) => res.json());
-    }
+  }
+
+  getCampaign(id) {
+  return this.http.get(`${this.BASEURL}/api/campaigns/${id}`)
+    .map((res) => res.json());
+  }
 
 
 }

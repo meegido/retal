@@ -22,6 +22,7 @@ require('./config/database');
 var whitelist = [
     'http://localhost:4200',
 ];
+
 var corsOptions = {
     origin: function(origin, callback){
         var originIsWhitelisted = whitelist.indexOf(origin) !== -1;
@@ -32,15 +33,12 @@ var corsOptions = {
 
 app.use(cors(corsOptions));
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-// default value for title local
 app.locals.title = 'Retal';
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use((req, res, next) => {
+  res.sendfile(__dirname + '/public/index.html');
+});
+
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

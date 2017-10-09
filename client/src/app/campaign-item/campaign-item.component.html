@@ -1,13 +1,12 @@
 <h1>Campaña</h1>
-{{ campaign | json }}
 <section class="">
   <article>
+      <h1>{{ campaign.fabric.typeName }}</h1>
   <ul>
-    <h1>{{ campaign.fabric.typeName}}</h1>
     <li>{{ campaign.status }}</li>
     <li>{{ campaign.meterPrice }}€/m</li>
-    <li>Metros que quedan...</li>
-    <li>Tiempo para terminar...</li>
+    <li>Metros que quedan</li>
+    <li>Tiempo para terminar</li>
   </ul>
   </article>
 </section>

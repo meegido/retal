@@ -1,11 +1,9 @@
 <h1>Campañas</h1>
-{{ campaign | json }}
-
 <section class="">
   <article class="" *ngFor="let campaign of campaigns">
-  <ul>
     <img [src]="campaign.fabric.files" height="100"/>
-    <h1>{{ campaign.fabric.typeName}}</h1>
+    <h1>{{ campaign.fabric.typeName }}</h1>
+  <ul>
     <li>{{ campaign.status }}</li>
     <li>{{ campaign.maker.username }}</li>
     <li>{{ campaign.fabric.description }}</li>

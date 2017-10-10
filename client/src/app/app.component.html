@@ -1,1 +1,22 @@
-<router-outlet></router-outlet>
+<nav class="nav justify-content-end bg-info">
+
+  <ul class="nav m-3">
+      <li *ngIf="!user" class="nav-item active mr-3">
+        <a class="navbar-link" [routerLink]="['/login']">Login</a>
+      </li>
+      <li *ngIf="!user" class="nav-item mr-3">
+        <a class="navbar-link" [routerLink]="['/signup']">Signup</a>
+      </li>
+      <li *ngIf="user" class="nav-item">
+        <a class="navbar-link" [routerLink]="['/']">Mis campañas</a>
+      </li>
+      <li *ngIf="user" class="nav-item">
+         <button (click)="logout()" class="btn btn-lg btn-primary btn-block">Logout</button>
+      </li>
+  </ul>
+</nav>
+
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

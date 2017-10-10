@@ -8,7 +8,6 @@ const BASEURL = environment.BASEURL + "/api/auth";
 
 @Injectable()
 export class AuthService {
-  public BASEURL = environment.BASEURL;
   private options = {withCredentials:true};
 
   private user:object;
@@ -40,14 +39,14 @@ export class AuthService {
 
     signup(username,password,email) {
       console.log("entrooo")
-      return this.http.post(`${BASEURL}/signup`, {username,password,email}, this.options)
+      return this.http.post(`${BASEURL}/signup`, { username, password, email }, this.options)
         .map(res => res.json())
         .map(user => this.emitUserLoginEvent(user))
         .catch(this.handleError);
     }
 
     login(username,password) {
-      return this.http.post(`${BASEURL}/login`, {username,password}, this.options)
+      return this.http.post(`${BASEURL}/login`, { username, password} , this.options)
         .map(res => res.json())
         .map(user => this.emitUserLoginEvent(user))
         .catch(this.handleError);

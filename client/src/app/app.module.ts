@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from './services/auth.service';
 import { AppComponent } from './app.component';
 import {routes} from './routes';
-import { AuthService } from './services/auth.service';
+
 import { IsLoggedInService } from './services/is-logged-in.canactivate.service';
 import { LoginformComponent } from './loginform/loginform.component';
 import { SignupformComponent } from './signupform/signupform.component';
@@ -18,6 +19,7 @@ import { FabricItemComponent } from './fabric-item/fabric-item.component';
 
 import { CampaignsService } from './services/campaigns.service';
 import { FabricsService } from './services/fabrics.service';
+import { MyCampaignsComponent } from './my-campaigns/my-campaigns.component';
 
 
 @NgModule({
@@ -30,12 +32,14 @@ import { FabricsService } from './services/fabrics.service';
     CampaignsComponent,
     CampaignItemComponent,
     FabricItemComponent,
+    MyCampaignsComponent,
   ],
   imports: [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgbModule
   ],
   providers: [
     AuthService,

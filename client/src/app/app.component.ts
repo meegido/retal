@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  
+
+  title = 'Retal';
+  user: object;
+  constructor(public auth:AuthService) {
+    this.user = this.auth.getUser()
+    this.auth.getLoginEventEmitter()
+      .subscribe( user => this.user = user)
+  }
+
+    logout() {
+     this.auth.logout()
+       .subscribe();
+    }
+
 }

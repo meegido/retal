@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 interface LoginForm {
   username:string;
@@ -16,8 +17,12 @@ export class LoginformComponent implements OnInit {
       username: "",
       password: ""
     }
-
-  constructor(public auth:AuthService) { }
+    user: object;
+    message: string;
+  constructor(
+    public auth:AuthService,
+    private router:Router
+  ) { }
 
   ngOnInit() {
   }
@@ -28,9 +33,13 @@ export class LoginformComponent implements OnInit {
      console.log(`Login with ${username} ${password}`)
      this.auth.login(username, password)
      .map(user => console.log(user))
-     .subscribe();
-   } else{
-     console.log("You must set a username and a password");
+     .subscribe(
+      (user) => this.router.navigate(['/my-campaigns']),
+      (err) => this.message = err)
+
+   } else {
+     console.log("You must set a username and a password")
+     this.message = "You must set a username and a password";
    }
  }
 

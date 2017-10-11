@@ -1,16 +1,16 @@
-<h1>Campañas</h1>
-<section>
-  <article *ngFor="let campaign of campaigns">
-    <img [src]="campaign.fabric.files" height="100"/>
-    <h1>{{ campaign.fabric.typeName }}</h1>
-  <ul>
-    <li>{{ campaign.status }}</li>
-    <li>{{ campaign.maker.username }}</li>
-    <li>{{ campaign.fabric.description }}</li>
-    <li>{{ campaign.totalMeters }}</li>
-    <li>{{ campaign.meterPrice }}€/m</li>
-    <li>Metros que quedan</li>
-  </ul>
-    <a [routerLink]="['/campaigns', campaign._id]">Ver campaña</a>
+<section class="mt-4 card-deck">
+  <article class="card mb-5"  style="width: 30rem" *ngFor="let campaign of campaigns">
+    <img class="card-img-top" [src]="campaign.fabric.files" height="200" alt="fabric image"/>
+    <div class="card-block">
+      <h4 class="card-title">{{ campaign.fabric.typeName }} de {{ campaign.maker.username }}</h4>
+    <ul>
+      <li>{{ campaign.fabric.description }}</li>
+      <li>{{ campaign.totalMeters }}</li>
+      <li>{{ campaign.meterPrice }}€/m</li>
+      <li>{{ campaign.status }}</li>
+      <li>Metros que quedan</li>
+    </ul>
+      <a class="btn btn-primary" [routerLink]="['/campaigns', campaign._id]">Ver campaña</a>
+  </div>
   </article>
 </section>

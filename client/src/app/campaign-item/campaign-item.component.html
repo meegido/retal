@@ -1,12 +1,12 @@
 <div *ngIf="campaign">
   <h1>Campaña</h1>
-  {{ campaign | json }}
   <section>
     <article>
         <h1>{{ campaign.fabric.typeName }}</h1>
         <p>{{ campaign.maker.username }}</p>
       <ul>
         <li>{{ campaign.startAt | date:'shortDate' }}</li>
+        <li>{{ campaign.endsAt | date:'shortDate' }}</li>
         <li>{{ campaign.status }}</li>
         <li>{{ campaign.meterPrice }}€/m</li>
         <li>Metros que quedan</li>

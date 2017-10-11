@@ -7,6 +7,7 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from './services/auth.service';
 import { AppComponent } from './app.component';
 import { routes } from './routes';
+//import { MomentModule } from 'angular2-moment';
 
 import { IsLoggedInService } from './services/is-logged-in.canactivate.service';
 import { LoginformComponent } from './loginform/loginform.component';
@@ -42,6 +43,7 @@ import { MetricsComponent } from './metrics/metrics.component';
     FormsModule,
     RouterModule.forRoot(routes),
     NgbModule
+    //MomentModule
   ],
   providers: [
     AuthService,

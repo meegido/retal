@@ -13,7 +13,6 @@ const campaignSchema = new Schema({
 	'startAt': Date,
 	'endsAt': Date,
 	'maker': { type: Schema.Types.ObjectId, ref: 'User' },
-	'buyer': [{ type: Schema.Types.ObjectId, ref: 'User' }],
 	'fabric': { type: Schema.Types.ObjectId, ref: 'Fabric' },
 	'order': [{ type: Schema.Types.ObjectId, ref: 'Order' }]
 });

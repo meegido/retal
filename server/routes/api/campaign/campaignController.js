@@ -38,12 +38,12 @@ module.exports = {
 
   create: (req, res) => {
     const { status, meterPrice, totalMeters, revenue, minimumOrder,
-      startAt, endsAt, maker, buyer, fabric, order
+      startAt, endsAt, maker, fabric, order
      } = req.body;
 
     const campaign = new campaignModel({
       status, meterPrice, totalMeters, revenue, minimumOrder,
-        startAt, endsAt, maker, buyer, fabric, order
+        startAt, endsAt, maker, fabric, order
     });
 
     campaign.save()
@@ -59,11 +59,11 @@ module.exports = {
 
   update: (req, res) => {
     const { status, meterPrice, totalMeters, revenue, minimumOrder,
-      startAt, endsAt, maker, buyer, fabric, order } = req.body;
+      startAt, endsAt, maker,fabric, order } = req.body;
 
     campaignModel.findByIdAndUpdate(req.params.id, {
       $set: {status, meterPrice, totalMeters, revenue, minimumOrder,
-        startAt, endsAt, maker, buyer, fabric, order }
+        startAt, endsAt, maker, fabric, order }
     }, {new:true})
       .then(campaign => res.status(200).json(campaign))
       .catch(e => res.status(500).json({

@@ -16,8 +16,8 @@ const campaign = [
     endsAt: '2017-10-17T19:29:34.390Z',
     maker: "59da0213cf62694ff8df2a62",
     buyer: ['59da02f6cf62694ff8df2a69', '59da0318cf62694ff8df2a6a'],
-    fabric: '59da7eaea2fe3a14429ca4ef',
-    order: '59da7f073b3a92146eb1d465'
+    fabric: '59ddf97c2f89b9231b69da3a',
+    order: '59ddfa79d8cd5923c81c2eeb'
   },
   {
     status: 'abierta',
@@ -29,8 +29,8 @@ const campaign = [
     endsAt: '2017-10-27T19:29:34.390Z',
     maker: '59da023ecf62694ff8df2a63',
     buyer: '59da02f6cf62694ff8df2a69',
-    fabric: '59da7eaea2fe3a14429ca4f0',
-    order: '59da7f073b3a92146eb1d466'
+    fabric: '59ddf97c2f89b9231b69da3b',
+    order: '59ddfa79d8cd5923c81c2eec'
   },
   {
     status: 'cerrada',
@@ -42,8 +42,8 @@ const campaign = [
     endsAt: '2017-10-12T19:29:34.390Z',
     maker: '59da0257cf62694ff8df2a64',
     buyer: ['59da0318cf62694ff8df2a6a', '59da02e7cf62694ff8df2a68'],
-    fabric: '59da7eaea2fe3a14429ca4f1',
-    order: '59da7f073b3a92146eb1d467'
+    fabric: '59ddf97c2f89b9231b69da3c',
+    order: '59ddfa79d8cd5923c81c2eed'
   },
   {
     status: 'abierta',
@@ -55,8 +55,8 @@ const campaign = [
     endsAt: '2017-09-17T19:29:34.390Z',
     maker: '59da0287cf62694ff8df2a65',
     buyer: '59da02e7cf62694ff8df2a68',
-    fabric: '59da7eaea2fe3a14429ca4f2',
-    order: '59da7f073b3a92146eb1d468'
+    fabric: '59ddf97c2f89b9231b69da3d',
+    order: '59ddfa79d8cd5923c81c2eee'
   },
   {
     status: 'abierta',
@@ -68,8 +68,8 @@ const campaign = [
     endsAt: '2017-08-17T19:29:34.390Z',
     maker: '59da02bdcf62694ff8df2a66',
     buyer: '59da02e7cf62694ff8df2a68',
-    fabric: '59da7eaea2fe3a14429ca4f3',
-    order: '59da7f073b3a92146eb1d469'
+    fabric: '59ddf97c2f89b9231b69da3e',
+    order: '59ddfa79d8cd5923c81c2eef'
   }
 
 ]

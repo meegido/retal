@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const Order = require('../routes/api/order/Order')
+
 mongoose.connect('mongodb://localhost/retal')
   .then(() => console.log('connected to db!'))
 
@@ -8,7 +9,7 @@ const order = [
   {
     meters: 20,
     maker: '59da0213cf62694ff8df2a62',
-    buyer: ['59da02f6cf62694ff8df2a69', '59da0318cf62694ff8df2a6a']
+    buyer: '59da02f6cf62694ff8df2a69'
   },
   {
     meters: 30,
@@ -18,7 +19,7 @@ const order = [
   {
     meters: 10,
     maker: '59da0257cf62694ff8df2a64',
-    buyer: ['59da0318cf62694ff8df2a6a', '59da02e7cf62694ff8df2a68']
+    buyer: '59da02e7cf62694ff8df2a68'
   },
   {
     meters: 50,
@@ -30,7 +31,6 @@ const order = [
     maker: '59da02bdcf62694ff8df2a66',
     buyer: '59da02e7cf62694ff8df2a68'
   }
-
 ]
 
 Order.create(order, (err, docs) => {

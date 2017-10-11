@@ -27,8 +27,6 @@ export class MyCampaignsComponent implements OnInit {
         this.campaigns = campaigns.filter( userCampaign => {
            return userCampaign.maker._id === this.user._id
          })
-          // this.buyer = this.campaigns[0].order[0].buyer[0]
-          // this.order = this.campaigns[0].order[0]
       });
     })
   }

@@ -9,11 +9,15 @@
       <h1>{{ usercampaign.fabric.typeName }}</h1>
       <p>{{ usercampaign.fabric.description }}</p>
     </article>
-    <article *ngFor="let inforders of campaigns">
+    <article *ngFor="let campaign of campaigns">
       <h1>Peticiones de compra</h1>
-      <ul *ngFor="let buyer of inforders.buyer">
-        <li>{{ buyer.username }}</li>
-        <li>{{ buyer.email }}</li>
+      <p>{{ campaign.meters }} metros</p>
+      <ul *ngFor="let order of campaign.order">
+        <li>{{ order.meters }}</li>
+        <ul *ngFor="let buyer of order.buyer">
+          <li>{{ buyer.username }}</li>
+          <li>{{ buyer.email }}</li>
+        </ul>
       </ul>
     </article>
   </section>

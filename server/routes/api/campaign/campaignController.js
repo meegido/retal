@@ -4,7 +4,13 @@ const orderModel = require('../order/Order');
 
 module.exports = {
   list: (req, res) => {
-    campaignModel.find().populate('maker fabric order')
+    campaignModel.find().populate({
+      path: 'maker fabric order',
+      populate: {
+        path: 'buyer',
+        model: 'User'
+      }
+    })
       .then(campaign => res.status(200).json(campaign))
       .catch(e => res.status(500).json({
         message: 'Error when getting campaign.',
@@ -15,7 +21,7 @@ module.exports = {
   show: (req, res) => {
     const id = req.params.id;
     campaignModel.findById(id).populate({
-      path: 'order',
+      path: 'order maker fabric',
       populate: {
         path: 'buyer',
         model: 'User'

@@ -1,5 +1,21 @@
-<section>
-  <article *ngFor="let usercampaign of campaigns">
-    <h1>{{ usercampaign.maker.username}}</h1>
-  </article>
-</section>
+<div class="row mt-4">
+  <section class="col">
+    <article *ngFor="let usercampaign of campaigns">
+      <img [src]="usercampaign.fabric.files" height="400"/>
+    </article>
+  </section>
+  <section class="col">
+    <article *ngFor="let usercampaign of campaigns">
+      <h1>{{ usercampaign.fabric.typeName }}</h1>
+      <p>{{ usercampaign.fabric.description }}</p>
+    </article>
+    <article *ngFor="let inforders of campaigns">
+      <h1>Peticiones de compra</h1>
+      <ul *ngFor="let buyer of inforders.buyer">
+        <li>{{ buyer.username }}</li>
+        <li>{{ buyer.email }}</li>
+      </ul>
+    </article>
+  </section>
+
+</div>

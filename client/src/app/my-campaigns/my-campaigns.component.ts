@@ -12,24 +12,26 @@ import { CampaignsService } from '../services/campaigns.service';
 export class MyCampaignsComponent implements OnInit {
   user:any;
   campaigns:any;
+  buyer:any;
+  order:any;
+  meters:any;
   constructor(
     private router:Router,
     private auth:AuthService,
     private campaignS:CampaignsService
   ) {
     this.user = this.auth.getUser()
-    this.auth.getLoginEventEmitter()
-      .subscribe(user => {
-        this.user = user;
-        this.campaignS.getListCampaigns()
-          .subscribe(campaigns => {
-            this.campaigns = campaigns.filter(
-               (userCampaign) => userCampaign.maker._id === this.user._id)
-             });
-      })
+    this.auth.getLoginEventEmitter().subscribe(user => {
+      this.user = user;
+      this.campaignS.getListCampaigns().subscribe(campaigns => {
+        this.campaigns = campaigns.filter( userCampaign => {
+           return userCampaign.maker._id === this.user._id
+         })
+          // this.buyer = this.campaigns[0].order[0].buyer[0]
+          // this.order = this.campaigns[0].order[0]
+      });
+    })
   }
 
-  ngOnInit() {
-
-    }
+  ngOnInit() {}
 }

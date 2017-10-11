@@ -1,4 +1,4 @@
-mongoose = require('mongoose');
+const mongoose = require('mongoose');
 const orderModel = require('./Order');
 
 module.exports = {

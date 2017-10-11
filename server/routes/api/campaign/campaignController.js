@@ -1,10 +1,11 @@
 mongoose = require('mongoose');
 const campaignModel = require('./campaignModel.js');
+const orderModel = require('../order/Order');
 
 module.exports = {
   list: (req, res) => {
-    campaignModel.find().populate('maker buyer fabric order')
-      .then(campaigns => res.status(200).json(campaigns))
+    campaignModel.find().populate('maker fabric order')
+      .then(campaign => res.status(200).json(campaign))
       .catch(e => res.status(500).json({
         message: 'Error when getting campaign.',
         error: e.error
@@ -13,12 +14,20 @@ module.exports = {
 
   show: (req, res) => {
     const id = req.params.id;
-    campaignModel.findById(id).populate('maker buyer fabric order')
-      .then(campaign => res.status(200).json(campaign))
-      .catch(e => res.status(500).json({
-        message: 'Error when getting campaign.',
-        error: e.message
-      }))
+    campaignModel.findById(id).populate({
+      path: 'order',
+      populate: {
+        path: 'buyer',
+        model: 'User'
+      }
+    })
+    .then( campaigns => {
+      res.status(200).json(campaigns)
+    })
+    .catch(e => res.status(500).json({
+      message: 'Error when getting campaign.',
+      error: e.message
+    }))
   },
 
   create: (req, res) => {

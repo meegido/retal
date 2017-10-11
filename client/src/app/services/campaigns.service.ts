@@ -23,6 +23,4 @@ export class CampaignsService {
   return this.http.get(`${this.BASEURL}/api/campaigns/${id}`)
     .map((res) => res.json());
   }
-
-
 }

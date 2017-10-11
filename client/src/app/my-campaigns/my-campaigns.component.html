@@ -1,3 +1,5 @@
-<p>
-  my-campaigns works!
-</p>
+<section>
+  <article *ngFor="let usercampaign of campaigns">
+    <h1>{{ usercampaign.maker.username}}</h1>
+  </article>
+</section>

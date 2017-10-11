@@ -36,5 +36,4 @@ export class CampaignsComponent implements OnInit {
       });
   }
 
-
   }

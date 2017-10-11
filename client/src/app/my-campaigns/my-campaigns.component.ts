@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
+import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../services/auth.service';
 import { CampaignsService } from '../services/campaigns.service';
 
@@ -9,14 +10,26 @@ import { CampaignsService } from '../services/campaigns.service';
   styleUrls: ['./my-campaigns.component.css']
 })
 export class MyCampaignsComponent implements OnInit {
-
+  user:any;
+  campaigns:any;
   constructor(
     private router:Router,
-    private route:ActivatedRoute,
-    private auth:AuthService
-  ) { }
-
-  ngOnInit() {
+    private auth:AuthService,
+    private campaignS:CampaignsService
+  ) {
+    this.user = this.auth.getUser()
+    this.auth.getLoginEventEmitter()
+      .subscribe(user => {
+        this.user = user;
+        this.campaignS.getListCampaigns()
+          .subscribe(campaigns => {
+            this.campaigns = campaigns.filter(
+               (userCampaign) => userCampaign.maker._id === this.user._id)
+             });
+      })
   }
 
+  ngOnInit() {
+
+    }
 }

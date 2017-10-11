@@ -57,7 +57,6 @@ module.exports = {
       }))
   },
 
-
   remove: (req, res) => {
     const id = req.params.id;
     campaignModel.findByIdAndRemove(id)

@@ -29,10 +29,8 @@ export class CampaignItemComponent implements OnInit {
 
   getCampaignItem(id) {
     this.campaignS.getCampaign(id)
-    .subscribe((campaign) => {
-      this.campaign = campaign
+      .subscribe((campaign) => {
+        this.campaign = campaign
     })
   }
-
-
 }

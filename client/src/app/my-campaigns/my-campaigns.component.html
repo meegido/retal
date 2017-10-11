@@ -1,16 +1,17 @@
 <div class="row mt-4">
   <section class="col">
-    <article *ngFor="let usercampaign of campaigns">
-      <img [src]="usercampaign.fabric.files" height="400"/>
+    <article *ngFor="let campaign of userCampaigns">
+      <img [src]="campaign.fabric.files" height="400"/>
     </article>
   </section>
 
   <section class="col">
-    <article *ngFor="let usercampaign of campaigns">
-      <h1>{{ usercampaign.fabric.typeName }}</h1>
-      <p>{{ usercampaign.fabric.description }}</p>
+    <article *ngFor="let campaign of userCampaigns">
+      <h1>{{ campaign.fabric.typeName }}</h1>
+      <p>{{ campaign.fabric.description }}</p>
     </article>
-    <article *ngFor="let campaign of campaigns">
+    <article class="mt-5" *ngFor="let campaign of userCampaigns">
+      <p>Campaña:{{ campaign.status }}</p>
       <h1>Peticiones de compra</h1>
       <table class="table table-hover">
         <thead>
@@ -18,17 +19,25 @@
             <th>Nombre</th>
             <th>Email</th>
             <th>Cantidad</th>
+            <th>Precio</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let order of campaign.order">
             <td>{{ order.buyer.username }}</td>
             <td>{{ order.buyer.email }}</td>
-            <td>{{ order.meters }}/m</td>
+            <td>{{ order.meters }}m</td>
+            <td>{{ getItemPrice(order.meters, campaign.meterPrice) }}€</td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td>{{ getTotalMeters(campaign.order) }}</td>
+            <td>{{ getTotalPrice(campaign.order, campaign.meterPrice) }}</td>
           </tr>
         </tbody>
+
       </table>
     </article>
   </section>
-
 </div>

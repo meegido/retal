@@ -20,6 +20,7 @@ import { FabricItemComponent } from './fabric-item/fabric-item.component';
 import { CampaignsService } from './services/campaigns.service';
 import { FabricsService } from './services/fabrics.service';
 import { MyCampaignsComponent } from './my-campaigns/my-campaigns.component';
+import { MetricsComponent } from './metrics/metrics.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { MyCampaignsComponent } from './my-campaigns/my-campaigns.component';
     CampaignItemComponent,
     FabricItemComponent,
     MyCampaignsComponent,
+    MetricsComponent,
   ],
   imports: [
     BrowserModule,

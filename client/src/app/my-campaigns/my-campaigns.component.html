@@ -12,12 +12,22 @@
     </article>
     <article *ngFor="let campaign of campaigns">
       <h1>Peticiones de compra</h1>
-      <p>{{ campaign.meters }} metros</p>
-      <ul *ngFor="let order of campaign.order">
-        <li>{{ order.meters }}</li>
-        <li>{{ order.buyer.username }}</li>
-        <li>{{ order.buyer.email }}</li>
-      </ul>
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Cantidad</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of campaign.order">
+            <td>{{ order.buyer.username }}</td>
+            <td>{{ order.buyer.email }}</td>
+            <td>{{ order.meters }}/m</td>
+          </tr>
+        </tbody>
+      </table>
     </article>
   </section>
 

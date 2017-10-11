@@ -6,7 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from './services/auth.service';
 import { AppComponent } from './app.component';
-import {routes} from './routes';
+import { routes } from './routes';
 
 import { IsLoggedInService } from './services/is-logged-in.canactivate.service';
 import { LoginformComponent } from './loginform/loginform.component';

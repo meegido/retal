@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { DatePipe } from '@angular/common';
 import { FabricsService } from '../services/fabrics.service';
 import { CampaignsService } from '../services/campaigns.service';
 //import { FabricItemComponent } from './fabric-item.fabric-item.component'

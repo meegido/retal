@@ -3,7 +3,7 @@ const orderModel = require('./Order');
 
 module.exports = {
   list: (req, res) => {
-    orderModel.find().populate('maker buyer')
+    orderModel.find().populate('maker')
       .then(orders => res.status(200).json(orders))
       .catch(e => res.status(500).json({
         message: 'Error when getting the orders.',
@@ -13,7 +13,7 @@ module.exports = {
 
   show: (req, res) => {
     const id = req.params.id;
-    orderModel.findById(id).populate('maker buyer')
+    orderModel.findById(id).populate('maker')
       .then(order => res.status(200).json(order))
       .catch(e => res.status(500).json({
         message: 'Error when getting order.',
@@ -22,9 +22,9 @@ module.exports = {
   },
 
   create: (req, res) => {
-    const { meters, maker, buyer } = req.body;
+    const { meters, maker, buyerUsername, buyerEmail } = req.body;
     const order = new orderModel({
-      meters, maker, buyer
+      meters, maker, buyerUsername, buyerEmail
     });
     order.save()
       .then(order => res.status(200).json({
@@ -38,10 +38,10 @@ module.exports = {
   },
 
   update: (req, res) => {
-    const { meters, maker, buyer } = req.body;
+    const { meters, maker, buyerUsername, buyerEmail } = req.body;
 
     orderModel.findByIdAndUpdate(req.params.id, {
-      $set: { meters, maker, buyer }
+      $set: { meters, maker, buyerUsername, buyerEmail }
     }, { new:true }).exec()
       .then(order => res.status(200).json(order))
       .catch(e => res.status(500).json('Error when you try tu update your order'))

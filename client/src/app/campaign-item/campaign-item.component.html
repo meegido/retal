@@ -1,17 +1,50 @@
-<div *ngIf="campaign">
-  <h1>Campaña</h1>
-  <section>
-    <article>
-        <h1>{{ campaign.fabric.typeName }}</h1>
-        <p>{{ campaign.maker.username }}</p>
-      <ul>
-        <li>{{ campaign.startAt | date:'shortDate' }}</li>
-        <li>{{ campaign.endsAt | date:'shortDate' }}</li>
-        <li>{{ campaign.status }}</li>
-        <li>{{ campaign.meterPrice }}€/m</li>
-        <li>Metros que quedan</li>
-        <li>Tiempo para terminar</li>
-      </ul>
+<div class="row" *ngIf="campaign">
+  <section class="mt-5 col">
+    <article class="">
+        <img class="card-img-top" [src]="campaign.fabric.files" height="300" alt="fabric image"/>
     </article>
   </section>
+
+  <section class="col mt-5">
+    <article>
+      <h1>{{ campaign.fabric.typeName }}</h1>
+      <h2>{{ campaign.maker.username }}</h2>
+      <p>{{ campaign.fabric.description }}</p>
+      <p>Termina el {{ campaign.endsAt | date:'shortDate' }}</p>
+      <p>El precio por metro es {{ campaign.meterPrice }}€/m</p>
+      <p>Tela producida en {{ campaign.fabric.origin }}</p>
+    </article>
+    <article>
+      <button type="button" class="btn btn-primary">Pedir un retal</button>
+    </article>
+  </section>
+
+    <article class="mt-5 col-12">
+      <table class="table table-bordered">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Fibra</th>
+            <th>Color</th>
+            <th>Peso</th>
+            <th>Estructura</th>
+            <th>Tintado</th>
+            <th>Lavado</th>
+            <th>Uso final</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ campaign.fabric.fiber }}</td>
+            <td>{{ campaign.fabric.colour }}</td>
+            <td>{{ campaign.fabric.weight }}</td>
+            <td>{{ campaign.fabric.structure }}</td>
+            <td>{{ campaign.fabric.dye }}</td>
+            <td>{{ campaign.fabric.washed }}</td>
+            <td>{{ campaign.fabric.finalUse }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </article>
+
+
 </div>

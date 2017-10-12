@@ -1,4 +1,4 @@
-<div class="row mt-4">
+<div class="row mt-4 mb-4">
   <section class="col">
     <article *ngFor="let campaign of userCampaigns">
       <img [src]="campaign.fabric.files" height="400"/>
@@ -24,8 +24,8 @@
         </thead>
         <tbody>
           <tr *ngFor="let order of campaign.order">
-            <td>{{ order.buyer.username }}</td>
-            <td>{{ order.buyer.email }}</td>
+            <td>{{ order.buyerUsername }}</td>
+            <td>{{ order.buyerEmail }}</td>
             <td>{{ order.meters }}m</td>
             <td>{{ getItemPrice(order.meters, campaign.meterPrice) }}€</td>
           </tr>

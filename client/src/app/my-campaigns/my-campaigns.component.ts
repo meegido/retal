@@ -18,12 +18,12 @@ export class MyCampaignsComponent implements OnInit {
     private auth:AuthService,
     private campaignService:CampaignsService
   ) {
-    this.user = this.auth.getUser()
+    this.user = this.auth.getUser();
     this.auth.getLoginEventEmitter().subscribe(user => {
       this.user = user;
       this.campaignService.getListCampaigns().subscribe(campaigns => {
         this.userCampaigns = campaigns.filter( userCampaign => {
-           return userCampaign.maker._id === this.user._id
+           return userCampaign.maker._id === this.user._id;
          })
       })
     })

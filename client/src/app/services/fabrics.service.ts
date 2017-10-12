@@ -23,4 +23,9 @@ export class FabricsService {
   return this.http.get(`${this.BASEURL}/api/fabrics/${id}`)
     .map((res) => res.json());
   }
+
+  newFabric(fabric) {
+    return this.http.post(`${this.BASEURL}/api/fabrics/new`, fabric)
+    .map(res => {res.json(); console.log(res)});
+  }
 }

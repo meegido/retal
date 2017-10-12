@@ -15,8 +15,9 @@
       <p>Tela producida en {{ campaign.fabric.origin }}</p>
     </article>
     <article>
-      <button type="button" class="btn btn-primary">Pedir un retal</button>
+      <button *ngIf="!user || campaign.maker._id !== user._id" type="button" class="btn btn-primary">Pedir un retal</button>
     </article>
+
   </section>
 
     <article class="mt-5 col-12">

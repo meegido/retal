@@ -1,21 +1,21 @@
 
-  <nav class="nav navbar navbar-full bg-info">
-    <a class="navbar-brand" href="#">Retal</a>
-    <ul class="nav justify-content-end">
-        <li *ngIf="!user" class="nav-item active mr-3">
-          <a class="navbar-link" [routerLink]="['/login']">Login</a>
-        </li>
-        <li *ngIf="!user" class="nav-item mr-3">
-          <a class="navbar-link" [routerLink]="['/signup']">Signup</a>
-        </li>
-        <li *ngIf="user" class="nav-item mr-3">
-          <a class="navbar-link" [routerLink]="['/my-campaigns']">Mis campañas</a>
-        </li>
-        <li *ngIf="user" class="nav-item">
-           <button (click)="logout()" class="btn btn-primary btn-block">Logout</button>
-        </li>
-    </ul>
-  </nav>
+<nav class="nav navbar navbar-full bg-info">
+  <a class="navbar-brand" href="#">Retal</a>
+  <ul class="nav justify-content-end">
+      <li *ngIf="!user" class="nav-item active mr-3">
+        <a class="navbar-link" [routerLink]="['/login']">Login</a>
+      </li>
+      <li *ngIf="!user" class="nav-item mr-3">
+        <a class="navbar-link" [routerLink]="['/signup']">Signup</a>
+      </li>
+      <li *ngIf="user" class="nav-item mr-3">
+        <a class="navbar-link" [routerLink]="['/my-campaigns']">Mis campañas</a>
+      </li>
+      <li *ngIf="user" class="nav-item">
+         <button (click)="logout()" class="btn btn-primary btn-block">Logout</button>
+      </li>
+  </ul>
+</nav>
 <div class="container">
-  <router-outlet></router-outlet>
+<router-outlet></router-outlet>
 </div>

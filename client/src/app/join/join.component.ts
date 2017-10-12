@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
+import { CampaignsService } from '../services/campaigns.service';
+import { FabricsService } from '../services/fabrics.service'
 
 @Component({
   selector: 'app-join',
@@ -10,8 +11,9 @@ import { Router } from '@angular/router';
 export class JoinComponent implements OnInit {
 
   constructor(
-    public auth:AuthService,
-    private router:Router
+    private router:Router,
+    private campaignS:CampaignsService,
+    private fabricS:FabricsService
   ) { }
 
   ngOnInit() {

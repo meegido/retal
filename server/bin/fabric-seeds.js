@@ -10,7 +10,7 @@ const fabric = [
   	'origin': 'Italia',
   	'description': 'Una tela maravillosa de ovejas de la campiña italiana',
   	'fiber': 'Algodón',
-  	'colour': 'Crema',
+  	'colour': 'Verde',
   	'weight': 'Ligera',
   	'structure': 'Media',
   	'dye': 'No tintado',
@@ -18,15 +18,15 @@ const fabric = [
   	'shorten': 'Si',
   	'iron': 'Si',
   	'washed': 'A mano',
-    'files': 'http://tiendatelas.com/5354-thickbox_default/punto-liso-de-algodon-organico-crudo.jpg',
-  	'maker': '59da0213cf62694ff8df2a62'
+    'files': 'https://www.pexels.com/photo/abstract-art-artificial-artistic-131634/',
+  	'maker': '59df71deae8afc23706622f7'
   },
   {
     'typeName': 'Oxford',
     'origin': 'Galicia',
     'description': 'No es oxford la ciudad, es una tela',
     'fiber': 'Lana',
-    'colour': 'Rojo',
+    'colour': 'Azul',
     'weight': 'Media',
     'structure': 'Media',
     'dye': 'No tintado',
@@ -34,8 +34,8 @@ const fabric = [
     'shorten': 'No',
     'iron': 'Si',
     'washed': 'En seco',
-    'files': 'http://propercloth.com/reference/wp-content/uploads/2013/10/300ce67248a9fc767164dac00f7b2b1d.jpg',
-    'maker': '59da023ecf62694ff8df2a63'
+    'files': 'https://trello-attachments.s3.amazonaws.com/59d10f120066b7fc260d3682/59df74cca86a2fcc3f66a993/a88b6d6d9ed3f65947478b927033e621/oxford.jpeg',
+    'maker': '59df71deae8afc23706622f8'
   },
   {
     'typeName': 'Muselina',
@@ -50,8 +50,8 @@ const fabric = [
     'shorten': 'No',
     'iron': 'No',
     'washed': 'En seco',
-    'files': 'https://www.voguefabricsstore.com/images/product/P/32112-E.jpg',
-    'maker': '59da0257cf62694ff8df2a64'
+    'files': 'https://trello-attachments.s3.amazonaws.com/59d10f120066b7fc260d3682/59df74cca86a2fcc3f66a993/5006c7582f2fe49174146bb6bfc255e6/muselina.jpeg',
+    'maker': '59df71deae8afc23706622f9'
   },
   {
     'typeName': 'Franela',
@@ -66,8 +66,8 @@ const fabric = [
     'shorten': 'No',
     'iron': 'Si',
     'whashed': 'En seco',
-    'files': 'http://www.laretalera.es/1484/tela-franela-azul-cuadros-woolies-flannel.jpg',
-    'maker': '59da0287cf62694ff8df2a65'
+    'files': 'https://trello-attachments.s3.amazonaws.com/59d10f120066b7fc260d3682/59df74cca86a2fcc3f66a993/b682dc6dea893189b928c3618af41f10/franela.jpg',
+    'maker': '59df71deae8afc23706622fa'
   },
   {
     'typeName': 'Punto',
@@ -82,8 +82,8 @@ const fabric = [
     'shorten': 'No',
     'iron': 'Si',
     'washed': 'A mano',
-    'files': 'https://content.sparkstone.co.uk/7/1/images/catalog/i/xl_2673-21109.jpg',
-    'maker': '59da02bdcf62694ff8df2a66'
+    'files': 'https://trello-attachments.s3.amazonaws.com/59d10f120066b7fc260d3682/59df74cca86a2fcc3f66a993/2b3c8503012c32800fee16641d7d28f9/punto.jpg',
+    'maker': '59df71deae8afc23706622fa'
   },
   {
     'typeName': 'Denim',
@@ -98,8 +98,24 @@ const fabric = [
     'shorten': 'No',
     'iron': 'Si',
     'washed': 'A máquina',
-    'files': 'https://cdn.pixabay.com/photo/2013/07/19/12/23/denim-165303_960_720.jpg',
-    'maker': '59da02bdcf62694ff8df2a67'
+    'files': 'https://trello-attachments.s3.amazonaws.com/59d10f120066b7fc260d3682/59df74cca86a2fcc3f66a993/6eb8a2ffb062e01b58498816bef7d1ec/denim.jpeg',
+    'maker': '59df71deae8afc23706622fb'
+  },
+  {
+    'typeName': 'Lamé',
+    'origin': 'Italia',
+    'description': 'Respetamos la vida de los gusanos, aunque sean insectos',
+    'fiber': 'Seda',
+    'colour': 'Blanco',
+    'weight': 'Ligera',
+    'structure': 'Media',
+    'dye': 'No tintado',
+    'finalUse': 'Camisa',
+    'shorten': 'No',
+    'iron': 'No',
+    'washed': 'En seco',
+    'files': 'https://trello-attachments.s3.amazonaws.com/59d10f120066b7fc260d3682/59df74cca86a2fcc3f66a993/0c95629e102635a79e20622ea27d3cc1/seda.jpeg',
+    'maker': '59df71deae8afc23706622fb'
   }
 ]
 

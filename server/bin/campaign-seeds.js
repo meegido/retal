@@ -14,9 +14,9 @@ const campaign = [
     minimumOrder: 10,
     startAt: '2017-10-07T19:29:34.390Z',
     endsAt: '2017-10-17T19:29:34.390Z',
-    maker: "59da0213cf62694ff8df2a62",
-    fabric: '59ddf97c2f89b9231b69da3a',
-    order: ['59ddfd8c4ea968254d057f72', '59ddfd8c4ea968254d057f73']
+    maker: "59df71deae8afc23706622f7",
+    fabric: '59df7a35c73efe25395e8f16',
+    order: ['59df7d5a45d033260ade4079', '59df7d5a45d033260ade407e', '59df7d5a45d033260ade4082']
   },
   {
     status: 'abierta',
@@ -26,9 +26,9 @@ const campaign = [
     minimumOrder: 0,
     startAt: '2017-10-07T19:29:34.390Z',
     endsAt: '2017-10-27T19:29:34.390Z',
-    maker: '59da023ecf62694ff8df2a63',
-    fabric: '59ddf97c2f89b9231b69da3b',
-    order: ['59ddfd8c4ea968254d057f74', '59ddfd8c4ea968254d057f75']
+    maker: '59df71deae8afc23706622f8',
+    fabric: '59df7a35c73efe25395e8f17',
+    order: ['59df7d5a45d033260ade407a', '59df7d5a45d033260ade4081']
   },
   {
     status: 'cerrada',
@@ -38,9 +38,9 @@ const campaign = [
     minimumOrder: 0,
     startAt: '2017-10-02T19:29:34.390Z',
     endsAt: '2017-10-12T19:29:34.390Z',
-    maker: '59da0257cf62694ff8df2a64',
-    fabric: '59ddf97c2f89b9231b69da3c',
-    order: ['59ddfd8c4ea968254d057f76', '59ddfd8c4ea968254d057f77']
+    maker: '59df71deae8afc23706622f9',
+    fabric: '59df7a35c73efe25395e8f18',
+    order: ['59df7d5a45d033260ade407b', '59df7d5a45d033260ade4080']
   },
   {
     status: 'abierta',
@@ -50,9 +50,21 @@ const campaign = [
     minimumOrder: 0,
     startAt: '2017-09-07T19:29:34.390Z',
     endsAt: '2017-09-17T19:29:34.390Z',
-    maker: '59da0287cf62694ff8df2a65',
-    fabric: '59ddf97c2f89b9231b69da3d',
-    order: ['59ddfd8c4ea968254d057f78', '59ddfd8c4ea968254d057f79']
+    maker: '59df71deae8afc23706622fa',
+    fabric: '59df7a35c73efe25395e8f19',
+    order: ['59df7d5a45d033260ade407c']
+  },
+  {
+    status: 'abierta',
+    meterPrice: 10,
+    totalMeters: 150,
+    revenue: 0,
+    minimumOrder: 0,
+    startAt: '2017-09-07T19:29:34.390Z',
+    endsAt: '2017-09-17T19:29:34.390Z',
+    maker: '59df71deae8afc23706622fa',
+    fabric: '59df7a35c73efe25395e8f1a',
+    order: []
   },
   {
     status: 'abierta',
@@ -62,9 +74,9 @@ const campaign = [
     minimumOrder: 0,
     startAt: '2017-08-07T19:29:34.390Z',
     endsAt: '2017-08-17T19:29:34.390Z',
-    maker: '59da02bdcf62694ff8df2a66',
-    fabric: '59ddf97c2f89b9231b69da3e',
-    order: ['59ddfd8c4ea968254d057f7a', '59ddfd8c4ea968254d057f7b']
+    maker: '59df71deae8afc23706622fb',
+    fabric: '59df7a35c73efe25395e8f1b',
+    order: ['59df7d5a45d033260ade407d', '59df7d5a45d033260ade407f']
   }
 
 ]

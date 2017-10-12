@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const User = require('../models/User')
-const orderSchema = require('../routes/api/order/Order');
 const bcrypt = require('bcrypt')
 const bcryptSalt = 10
 
@@ -31,9 +30,15 @@ const user = [
     orderId: ''
   },
   {
-    username: 'Manolo',
+    username: 'Latitude',
     password: hashPass,
-    email: 'manolo@gmail.com',
+    email: 'latitude@gmail.com',
+    orderId: ''
+  },
+  {
+    username: 'Seda Organic',
+    password: hashPass,
+    email: 'sedaorganic@gmail.com',
     orderId: ''
   }
 ]

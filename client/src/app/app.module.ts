@@ -19,6 +19,7 @@ import { FabricItemComponent } from './fabric-item/fabric-item.component';
 
 import { CampaignsService } from './services/campaigns.service';
 import { FabricsService } from './services/fabrics.service';
+import { OrderService } from './services/order.service';
 import { MyCampaignsComponent } from './my-campaigns/my-campaigns.component';
 import { JoinComponent } from './join/join.component';
 
@@ -47,7 +48,8 @@ import { JoinComponent } from './join/join.component';
     AuthService,
     IsLoggedInService,
     CampaignsService,
-    FabricsService
+    FabricsService,
+    OrderService
   ],
   bootstrap: [AppComponent]
 })

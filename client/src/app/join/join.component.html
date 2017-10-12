@@ -1,3 +1,12 @@
-<p>
-  join works!
-</p>
+<div class="container">
+	<form ngSubmit="addOrder(order)" #order="ngForm" novalidate>
+		<label for="">Nombre</label>
+		<input type="text" name="buyerUsername" [(ngModel)]="buyerUsername"><br>
+		<label for="">Email</label>
+		<input type="email" name="buyerEmail" [(ngModel)]="buyerEmail"><br>
+    <label for="">¿Cuántos metros quieres?</label>
+		<input type="number" name="meters" [(ngModel)]="meters"><br>
+
+		<button>Submit</button>
+	</form>
+</div>

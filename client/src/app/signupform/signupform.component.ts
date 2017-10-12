@@ -9,9 +9,9 @@ import { AuthService } from '../services/auth.service'
 export class SignupformComponent implements OnInit {
 
   formInfo = {
-    username:"",
-    password:"",
-    email:""
+    username: "",
+    password: "",
+    email: ""
   }
   constructor(public auth:AuthService) { }
 

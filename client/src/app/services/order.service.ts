@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
@@ -8,24 +8,14 @@ import { environment }  from '../../environments/environment';
 const BASEURL = environment.BASEURL;
 
 @Injectable()
-export class CampaignsService {
+export class OrderService {
   public BASEURL = environment.BASEURL;
   private options = { withCredentials: true };
 
   constructor(private http: Http) { }
-
-  getListCampaigns() {
-    return this.http.get(`${this.BASEURL}/api/campaigns`)
-      .map((res) => res.json());
-  }
-
-  getCampaign(id) {
-  return this.http.get(`${this.BASEURL}/api/campaigns/${id}`)
-    .map((res) => res.json());
-  }
-
-  newCampaign(campaign) {
-    return this.http.post(`${this.BASEURL}/api/campaigns/new`, campaign)
+  
+  newOrder(order) {
+    return this.http.post(`${this.BASEURL}/api/orders/new`, order)
     .map(res => { res.json(); console.log(res)});
   }
 }

@@ -1,7 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { CampaignsService } from '../services/campaigns.service';
-import { FabricsService } from '../services/fabrics.service'
+import { Observable } from 'rxjs/Rx';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import { OrderService } from '../services/order.service';
+
+interface Order {
+  buyerUsername: string;
+  buyerEmail: string;
+  meters: number;
+}
 
 @Component({
   selector: 'app-join',
@@ -10,12 +18,25 @@ import { FabricsService } from '../services/fabrics.service'
 })
 export class JoinComponent implements OnInit {
 
+  current;
   constructor(
     private router:Router,
-    private campaignS:CampaignsService,
-    private fabricS:FabricsService
+    private orderS:OrderService
   ) { }
 
   ngOnInit() {
   }
+
+  addOrder(order) {
+    this.current = {
+      buyerUsername: order.value.title,
+      buyerEmail: order.value.email,
+      meters: order.value.meters
+    }
+
+    this.orderS.newOrder(this.current)
+      .subscribe(res => console.log(res))
+      console.log("siiiiii")
+  }
+
 }

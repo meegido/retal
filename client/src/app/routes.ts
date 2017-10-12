@@ -5,6 +5,7 @@ import { LoginformComponent } from './loginform/loginform.component';
 import { LogoutComponent } from './logout/logout.component';
 import { CampaignItemComponent } from './campaign-item/campaign-item.component';
 import { MyCampaignsComponent } from './my-campaigns/my-campaigns.component';
+import { JoinComponent } from './join/join.component';
 
 import { IsLoggedInService } from './services/is-logged-in.canactivate.service';
 
@@ -15,5 +16,6 @@ export const routes: Routes = [
   { path: 'logout',  component: LogoutComponent },
   { path: 'campaigns/:id', component: CampaignItemComponent},
   { path: 'my-campaigns', component: MyCampaignsComponent},
+  { path: 'new-order', component: JoinComponent},
   { path: '**', redirectTo: '' }
 ];

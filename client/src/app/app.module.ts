@@ -7,7 +7,6 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from './services/auth.service';
 import { AppComponent } from './app.component';
 import { routes } from './routes';
-//import { MomentModule } from 'angular2-moment';
 
 import { IsLoggedInService } from './services/is-logged-in.canactivate.service';
 import { LoginformComponent } from './loginform/loginform.component';
@@ -21,7 +20,7 @@ import { FabricItemComponent } from './fabric-item/fabric-item.component';
 import { CampaignsService } from './services/campaigns.service';
 import { FabricsService } from './services/fabrics.service';
 import { MyCampaignsComponent } from './my-campaigns/my-campaigns.component';
-import { MetricsComponent } from './metrics/metrics.component';
+import { JoinComponent } from './join/join.component';
 
 
 @NgModule({
@@ -35,7 +34,7 @@ import { MetricsComponent } from './metrics/metrics.component';
     CampaignItemComponent,
     FabricItemComponent,
     MyCampaignsComponent,
-    MetricsComponent,
+    JoinComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +42,6 @@ import { MetricsComponent } from './metrics/metrics.component';
     FormsModule,
     RouterModule.forRoot(routes),
     NgbModule
-    //MomentModule
   ],
   providers: [
     AuthService,

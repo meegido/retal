@@ -1,0 +1,27 @@
+.mynav {
+
+  border-bottom: 3px solid #f37735;
+}
+
+.my-brand {
+  font-size: 40px;
+  letter-spacing: 3px;
+}
+
+.separator {
+  color: #f37735;
+  width: 4px;
+}
+
+a {
+  color: #f37735;
+  font-size: 18px;
+}
+
+li > a {
+  color: #f37735;
+}
+
+li > a:hover {
+  color: #c0c5ce;
+}

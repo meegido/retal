@@ -8,3 +8,22 @@
   color:  #f37735;
   border: 2px solid #f37735;
 }
+
+h1 {
+  font-size: 40px;
+  color:  #f37735;
+}
+
+.header-text {
+  margin-left: 6em;
+  margin-top: 4em;
+}
+
+.header-subtext {
+  padding-left: 13em;
+  margin-top: 1em;
+  font-size: 23px;
+  margin-bottom: 2em;
+  color: #343d46;
+  font-style: italic;
+}

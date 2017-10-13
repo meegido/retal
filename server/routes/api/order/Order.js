@@ -5,7 +5,8 @@ const orderSchema = new Schema({
     'meters': Number,
     'maker': { type: Schema.Types.ObjectId, ref: 'User' },
     'buyerUsername': String,
-    'buyerEmail': String
+    'buyerEmail': String,
+    'campaignId': String
   })
 orderSchema.set('timestamps', true);
 

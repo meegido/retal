@@ -22,9 +22,9 @@ module.exports = {
   },
 
   create: (req, res) => {
-    const { meters, maker, buyerUsername, buyerEmail } = req.body;
+    const { campaignId, meters, maker, buyerUsername, buyerEmail } = req.body;
     const order = new orderModel({
-      meters, maker, buyerUsername, buyerEmail
+      campaignId, meters, maker, buyerUsername, buyerEmail
     });
     order.save()
       .then(order => res.status(200).json({

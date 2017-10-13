@@ -5,3 +5,14 @@ h1 {
 p {
   color: #343d46;
 }
+
+.add-btn {
+  background-color: #f37735;
+  color:  white;
+}
+
+.add-btn:hover {
+  background-color: white;
+  color:  #f37735;
+  border: 2px solid #f37735;
+}

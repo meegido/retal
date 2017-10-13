@@ -23,5 +23,6 @@ li > a {
 }
 
 li > a:hover {
-  color: #c0c5ce;
+  color: #343d46;
+  text-decoration: none;
 }

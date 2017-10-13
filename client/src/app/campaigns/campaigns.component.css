@@ -1,0 +1,10 @@
+.show-btn {
+  background-color: #f37735;
+  color:  white;
+}
+
+.show-btn:hover {
+  background-color: white;
+  color:  #f37735;
+  border: 2px solid #f37735;
+}

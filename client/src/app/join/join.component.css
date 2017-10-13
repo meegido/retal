@@ -1,5 +1,5 @@
 .join {
-  border: 3px solid 	#f37735;
+  border: 3px solid #f37735;
   padding: 50px 20px;
   text-align: center;
   border-radius: 12px;
@@ -16,13 +16,12 @@
 
 .join-btn {
   background-color: #f37735;
-  background-color: white;
-  color:  #f37735;
+  color: white;
+  border: 2px solid white;
 }
 
 .join-btn:hover {
-  background-color: wihte ;
-  background-color: #f37735;
-  color:  white;
+  background-color: white;
+  color:  #f37735;
   border: 2px solid white;
 }

@@ -1,16 +1,20 @@
-<section class="mt-4 card-deck">
-  <article class="card mb-5"  style="width: 30rem" *ngFor="let campaign of campaigns">
-    <img class="card-img-top" [src]="campaign.fabric.files" height="200" alt="fabric image"/>
-    <div class="card-block">
-      <h4 class="card-title">{{ campaign.fabric.typeName }} de {{ campaign.maker.username }}</h4>
-    <ul>
-      <li>{{ campaign.fabric.description }}</li>
-      <li>{{ campaign.totalMeters }}</li>
-      <li>{{ campaign.meterPrice }}€/m</li>
-      <li>{{ campaign.status }}</li>
-      <li>Metros que quedan</li>
-    </ul>
-      <a class="btn btn-primary" [routerLink]="['/campaigns', campaign._id]">Ver campaña</a>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let campaign of campaigns">
+      <section class="mt-4">
+        <article class="card mb-5"  style="width: 30rem" >
+          <img class="card-img-top" [src]="campaign.fabric.files" height="200" alt="fabric image"/>
+          <div class="card-block">
+            <h4 class="card-title">{{ campaign.fabric.typeName }} de {{ campaign.maker.username }}</h4>
+            <p class="card-subtitle mb-2 text-muted">{{ campaign.fabric.description }}</p>
+            <p class="card-text">Metros disponibles: {{ campaign.totalMeters }}/m</p>
+            <p class="card-text">Precio: {{ campaign.meterPrice }}€/m</p>
+            <p class="card-text">Color disponible: {{ campaign.fabric.colour }}</p>
+            <button class="btn show-btn" [routerLink]="['/campaigns', campaign._id]">Ver campaña</button>
+        </div>
+        </article>
+      </section>
+    </div>
   </div>
-  </article>
-</section>
+
+</div>

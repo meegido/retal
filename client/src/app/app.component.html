@@ -1,5 +1,5 @@
 
-<nav class="nav navbar navbar-full bg-info">
+<nav class="nav navbar navbar-full mynav">
   <a class="navbar-brand" href="#">Retal</a>
   <ul class="nav justify-content-end">
       <li *ngIf="!user" class="nav-item active mr-3">
@@ -12,7 +12,7 @@
         <a class="navbar-link" [routerLink]="['/my-campaigns']">Mis campañas</a>
       </li>
       <li *ngIf="user" class="nav-item">
-         <button (click)="logout()" class="btn btn-primary btn-block">Logout</button>
+         <a (click)="logout()" [routerLink]="['/']" class="btn btn-block">Logout</a>
       </li>
   </ul>
 </nav>

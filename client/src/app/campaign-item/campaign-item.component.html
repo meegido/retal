@@ -14,10 +14,7 @@
       <p>El precio por metro es {{ campaign.meterPrice }}€/m</p>
       <p>Tela producida en {{ campaign.fabric.origin }}</p>
     </article>
-    <article>
-      <button *ngIf="!user || campaign.maker._id !== user._id" type="button" class="btn btn-primary">Pedir un retal</button>
-    </article>
-
+    <a [routerLink]="['/new-order']" [queryParams]="{q:campaign._id}" *ngIf="!user || campaign.maker._id !== user._id">Pedir Retal</a>
   </section>
 
     <article class="mt-5 col-12">

@@ -1,0 +1,28 @@
+.join {
+  border: 3px solid 	#f37735;
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 12px;
+  margin-left: 23em;
+  margin-top: 2em;
+  background-color: 	#f37735;
+  color: white;
+}
+
+.title {
+  text-align: center;
+  color: 	#f37735;
+}
+
+.join-btn {
+  background-color: #f37735;
+  background-color: white;
+  color:  #f37735;
+}
+
+.join-btn:hover {
+  background-color: wihte ;
+  background-color: #f37735;
+  color:  white;
+  border: 2px solid white;
+}

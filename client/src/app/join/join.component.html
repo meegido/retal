@@ -1,12 +1,18 @@
-<div class="container">
-	<form ngSubmit="addOrder(order)" #order="ngForm" novalidate>
-		<label for="">Nombre</label>
-		<input type="text" name="buyerUsername" [(ngModel)]="buyerUsername"><br>
-		<label for="">Email</label>
-		<input type="email" name="buyerEmail" [(ngModel)]="buyerEmail"><br>
-    <label for="">¿Cuántos metros quieres?</label>
-		<input type="number" name="meters" [(ngModel)]="meters"><br>
-
-		<button>Submit</button>
+<div class="container mt-5 ">
+	<h1 class="title">Pedir retal</h1>
+	<form class="join col-4" #order="ngForm" novalidate>
+		<div class="form-group">
+			<label class="" for="">Nombre</label><br>
+			<input class="form-control" type="text" name="buyerUsername" [(ngModel)]="buyerUsername"><br>
+		</div>
+		<div class="form-group">
+			<label for="">Email</label><br>
+			<input class="form-control" type="email" name="buyerEmail" [(ngModel)]="buyerEmail"><br>
+		</div>
+		<div class="form-group">
+			<label for="">Número de metros</label><br>
+			<input class="form-control" type="number" name="meters" [(ngModel)]="meters"><br>
+		</div>
+		<button class="btn join-btn" (click)=addOrder(order.value)>ENVIAR</button>
 	</form>
 </div>

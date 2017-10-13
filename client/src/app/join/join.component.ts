@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { OrderService } from '../services/order.service';
+import { CampaignsService } from '../services/campaigns.service';
 
 interface Order {
   buyerUsername: string;
@@ -17,24 +18,42 @@ interface Order {
   styleUrls: ['./join.component.css']
 })
 export class JoinComponent implements OnInit {
-
+  order:Order = {
+    buyerUsername: "",
+    buyerEmail: "",
+    meters: 0
+  }
   current;
+  campaignId;
   constructor(
     private router:Router,
-    private orderS:OrderService
-  ) { }
+    private route:ActivatedRoute,
+    private orderS:OrderService,
+    private campaignS:CampaignsService
+  ) {}
 
   ngOnInit() {
+    console.log('HELLO')
+    this.getCampaignValue()
+  }
+
+
+  getCampaignValue() {
+    console.log('ROUTING')
+    return this.route.queryParams.subscribe(params => {
+      this.campaignId = params.q;
+    })
   }
 
   addOrder(order) {
-    this.current = {
-      buyerUsername: order.value.title,
-      buyerEmail: order.value.email,
-      meters: order.value.meters
-    }
+    console.log(order)
+    const {
+      buyerUsername,
+      buyerEmail,
+      meters
+    } = order
 
-    this.orderS.newOrder(this.current)
+    this.orderS.newOrder({buyerUsername, buyerEmail, meters, id: this.campaignId})
       .subscribe(res => console.log(res))
       console.log("siiiiii")
   }

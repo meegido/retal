@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { DatePipe } from '@angular/common';
 import { FabricsService } from '../services/fabrics.service';
 import { AuthService } from '../services/auth.service';
 import { CampaignsService } from '../services/campaigns.service';
-//import { FabricItemComponent } from './fabric-item.fabric-item.component'
 
 @Component({
   selector: 'app-campaign-item',
@@ -13,6 +12,9 @@ import { CampaignsService } from '../services/campaigns.service';
   styleUrls: ['./campaign-item.component.css']
 })
 export class CampaignItemComponent implements OnInit {
+  @Output() getCampaign = new EventEmitter();
+  @Input() campaignItem: any;
+
   campaign
   user: any
   constructor(
@@ -30,8 +32,9 @@ export class CampaignItemComponent implements OnInit {
       this.user = user
 
     })
+
     this.route.params.subscribe(params => {
-      console.log(`El parametro es ${params['id']}`)
+      //console.log(`El parametro es ${params['id']}`)
       this.getCampaignItem(params['id'])
     })
   }
@@ -39,6 +42,7 @@ export class CampaignItemComponent implements OnInit {
   getCampaignItem(id) {
     this.campaignS.getCampaign(id).subscribe(campaign => {
       this.campaign = campaign
+      // this.onCreateNewOrder(this.campaign._id  )
     })
   }
 }

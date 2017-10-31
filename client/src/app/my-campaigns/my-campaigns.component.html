@@ -1,19 +1,19 @@
 <div class="row mt-5 mb-5 justify-content-end">
   <button class="btn add-btn">Crear campaña</button>
 </div>
-<div class="row mt-4 mb-4">
+<div class="row mt-4 mb-4" *ngFor="let campaign of userCampaigns">
   <section class="col">
-    <article *ngFor="let campaign of userCampaigns">
-      <img [src]="campaign.fabric.files" height="400"/>
+    <article >
+      <img [src]="campaign.fabric.files" />
     </article>
   </section>
 
   <section class="col">
-    <article *ngFor="let campaign of userCampaigns">
+    <article>
       <h1>{{ campaign.fabric.typeName }}</h1>
       <p>{{ campaign.fabric.description }}</p>
     </article>
-    <article class="mt-5" *ngFor="let campaign of userCampaigns">
+    <article class="mt-5">
       <h1>Peticiones de compra</h1>
       <table class="table table-hover">
         <thead>

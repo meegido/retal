@@ -16,3 +16,8 @@ p {
   color:  #f37735;
   border: 2px solid #f37735;
 }
+
+img {
+  height: 400px;
+  width: 100%;
+}

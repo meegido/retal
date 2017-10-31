@@ -13,7 +13,6 @@ export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login',  component: LoginformComponent },
   { path: 'signup',  component: SignupformComponent },
-  { path: 'logout',  component: LogoutComponent },
   { path: 'campaigns/:id', component: CampaignItemComponent},
   { path: 'my-campaigns', component: MyCampaignsComponent},
   { path: 'new-order', component: JoinComponent},

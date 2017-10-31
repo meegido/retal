@@ -28,8 +28,7 @@ export class JoinComponent implements OnInit {
   constructor(
     private router:Router,
     private route:ActivatedRoute,
-    private orderS:OrderService,
-    private campaignS:CampaignsService
+    private orderService:OrderService
   ) {}
 
   ngOnInit() {
@@ -53,7 +52,7 @@ export class JoinComponent implements OnInit {
       meters
     } = order
 
-    this.orderS.newOrder({buyerUsername, buyerEmail, meters, id: this.campaignId})
+    this.orderService.newOrder({buyerUsername, buyerEmail, meters, id: this.campaignId})
       .subscribe(res => console.log(res))
       console.log("siiiiii")
   }

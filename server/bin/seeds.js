@@ -3,8 +3,13 @@ const User = require('../models/User')
 const bcrypt = require('bcrypt')
 const bcryptSalt = 10
 
-mongoose.connect('mongodb://localhost/retal')
-  .then(() => console.log('connected to db!'))
+// mongoose.connect('mongodb://localhost/retal')
+//   .then(() => console.log('connected to db!'))
+
+  mongoose.connect('mongodb://admin:KindR2yu!!@ds113455.mlab.com:13455/retales')
+    .then(() => console.log('connected to db!'))
+
+  //mongodb://<dbuser>:<dbpassword>@ds113455.mlab.com:13455/retales
 
 const password = '1234'
 const salt     = bcrypt.genSaltSync(bcryptSalt)

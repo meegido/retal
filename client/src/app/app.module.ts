@@ -12,7 +12,6 @@ import { IsLoggedInService } from './services/is-logged-in.canactivate.service';
 import { LoginformComponent } from './loginform/loginform.component';
 import { SignupformComponent } from './signupform/signupform.component';
 import { HomeComponent } from './home/home.component';
-import { LogoutComponent } from './logout/logout.component';
 import { CampaignsComponent } from './campaigns/campaigns.component';
 import { CampaignItemComponent } from './campaign-item/campaign-item.component';
 import { FabricItemComponent } from './fabric-item/fabric-item.component';
@@ -30,7 +29,6 @@ import { JoinComponent } from './join/join.component';
     LoginformComponent,
     SignupformComponent,
     HomeComponent,
-    LogoutComponent,
     CampaignsComponent,
     CampaignItemComponent,
     FabricItemComponent,

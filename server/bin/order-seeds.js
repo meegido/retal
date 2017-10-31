@@ -1,10 +1,12 @@
 const mongoose = require('mongoose')
 const Order = require('../routes/api/order/Order')
 
-mongoose.connect('mongodb://localhost/retal')
+// mongoose.connect('mongodb://localhost/retal')
+//   .then(() => console.log('connected to db!'))
+
+mongoose.connect('mongodb://admin:KindR2yu!!@ds113455.mlab.com:13455/retales')
   .then(() => console.log('connected to db!'))
-
-
+  
 const order = [
   {
     meters: 20,

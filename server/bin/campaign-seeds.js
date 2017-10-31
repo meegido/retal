@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
 const campaignSchema = require('../routes/api/campaign/campaignModel');
 
-mongoose.connect('mongodb://localhost/retal')
-  .then(() => console.log('connected to db!'))
+// mongoose.connect('mongodb://localhost/retal')
+//   .then(() => console.log('connected to db!'))
 
+mongoose.connect('mongodb://admin:KindR2yu!!@ds113455.mlab.com:13455/retales')
+  .then(() => console.log('connected to db!'))
 
 const campaign = [
   {

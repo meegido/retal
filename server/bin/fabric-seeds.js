@@ -1,8 +1,12 @@
 const mongoose = require('mongoose')
 const fabricSchema = require('../routes/api/fabric/Fabric')
 
-mongoose.connect('mongodb://localhost/retal')
+// mongoose.connect('mongodb://localhost/retal')
+//   .then(() => console.log('connected to db!'))
+
+mongoose.connect('mongodb://admin:KindR2yu!!@ds113455.mlab.com:13455/retales')
   .then(() => console.log('connected to db!'))
+
 
 const fabric = [
   {
@@ -18,7 +22,7 @@ const fabric = [
   	'shorten': 'Si',
   	'iron': 'Si',
   	'washed': 'A mano',
-    'files': 'https://www.pexels.com/photo/abstract-art-artificial-artistic-131634/',
+    'files': 'https://trello-attachments.s3.amazonaws.com/59d10f120066b7fc260d3682/59df782e38da5848ac4a0606/5bab30d180673cd63c4985ee6fdd14ce/tafetan.jpeg',
   	'maker': '59df71deae8afc23706622f7'
   },
   {

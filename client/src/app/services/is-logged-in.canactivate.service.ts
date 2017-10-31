@@ -16,6 +16,8 @@ export class IsLoggedInService implements CanActivate {
 
     //return timeout(5).then(() => true);
     //return this.auth.isLoggedIn().map(user => true)
+    // if(!this.auth.getUser()) { return false; }
+    // return true;
     return this.auth.getUser() ? true : false
     //return false;
   }

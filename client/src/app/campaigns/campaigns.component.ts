@@ -14,7 +14,7 @@ export class CampaignsComponent implements OnInit {
   campaigns;
   fabrics;
   constructor(
-    private campaignS:CampaignsService,
+    private campaignService:CampaignsService,
     private fabricS:FabricsService
   ) { }
 
@@ -27,7 +27,7 @@ export class CampaignsComponent implements OnInit {
         console.log(this.fabrics);
       });
 
-    this.campaignS.getListCampaigns()
+    this.campaignService.getListCampaigns()
       .subscribe(campaign => {
         this.campaigns = campaign;
       },

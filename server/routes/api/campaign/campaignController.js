@@ -1,6 +1,7 @@
 mongoose = require('mongoose');
 const campaignModel = require('./campaignModel.js');
 const orderModel = require('../order/Order');
+const { showError } = require('../utils');
 
 module.exports = {
   list: (req, res) => {
@@ -12,10 +13,7 @@ module.exports = {
       }
     })
       .then(campaign => res.status(200).json(campaign))
-      .catch(e => res.status(500).json({
-        message: 'Error when getting campaign.',
-        error: e.error
-      }));
+      .catch(showError(res, 'Error when getting campaign.'));
   },
 
   show: (req, res) => {
@@ -30,10 +28,7 @@ module.exports = {
     .then( campaigns => {
       res.status(200).json(campaigns)
     })
-    .catch(e => res.status(500).json({
-      message: 'Error when getting campaign.',
-      error: e.message
-    }))
+    .catch(showError(res, 'Error when getting campaign.'))
   },
 
   create: (req, res) => {
@@ -51,10 +46,7 @@ module.exports = {
         message: 'New campaign created!',
         campaign: campaign
       }))
-      .catch( e => res.status(500).json({
-        message: 'Error when creating campaign',
-        error: e.message
-      }));
+      .catch(showError(res, 'Error when creating campaign'));
   },
 
   update: (req, res) => {
@@ -66,18 +58,13 @@ module.exports = {
         startAt, endsAt, maker, fabric, order }
     }, {new:true})
       .then(campaign => res.status(200).json(campaign))
-      .catch(e => res.status(500).json({
-        message: 'Error when getting campaign',
-        error: e.message
-      }))
+      .catch(showError(res, 'Error when getting campaign'))
   },
 
   remove: (req, res) => {
     const id = req.params.id;
     campaignModel.findByIdAndRemove(id)
       .then(campaign => res.status(200).json(campaign))
-      .catch(error => res.status(500).json({
-        message: 'Error when deleting the campaign.',
-        error: e.message }))
+      .catch(showError(res, 'Error when deleting the campaign.'))
   }
 };

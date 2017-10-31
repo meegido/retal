@@ -1,24 +1,19 @@
 mongoose = require('mongoose');
 const fabricModel = require('./Fabric');
+const { showError }  = require('../utils');
 
 module.exports = {
   list: (req, res) => {
     fabricModel.find().populate('maker')
       .then(fabrics => res.status(200).json(fabrics))
-      .catch(e => res.status(500).json({
-        message: 'Error when getting the fabric.',
-        error: e.error
-      }));
+      .catch(showError(res, 'Error when getting the fabric.'));
   },
 
   show: (req, res) => {
     const id = req.params.id;
     fabricModel.findById(id).populate('maker')
       .then(fabric => res.status(200).json(fabric))
-      .catch(e => res.status(500).json({
-        message: 'Error when getting fabric.',
-        error: e.message
-      }))
+      .catch(showError(res, 'Error when getting fabric.'))
   },
   create: (req, res) => {
     const { typeName, origin, description, fiber, colour, weight,
@@ -34,10 +29,7 @@ module.exports = {
         message: 'New fabric created!',
         fabric: fabric
       }))
-      .catch(e => res.status(500).json({
-        message: 'Error when creating fabric',
-        error: e.message
-      }))
+      .catch(showError(res, 'Error when getting fabric.'))
   },
 
   update: (req, res) => {
@@ -49,18 +41,12 @@ module.exports = {
         structure, dye, finalUse, shorten, iron, washed, maker, files }
       }, { new:true }).exec()
         .then(fabric => res.status(200).json(fabric))
-        .catch(e => res.status(500).json({
-          message: 'Error when you try to update the order',
-          error: e.message
-        }));
+        .catch(showError(res, 'Error when getting fabric.'));
   },
 
   remove: (req, res) => {
     fabricModel.findByIdAndRemove(req.params.id)
       .then(fabric => res.status(200).json(fabric))
-      .catch(e => res.status(500).json({
-        message: 'Error when deleting the fabric.',
-        error: e.message
-      }))
+      .catch(showError(res, 'Error when deleting the fabric.'))
   }
 }

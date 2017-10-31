@@ -45,5 +45,3 @@ module.exports = {
       .catch(showError(res, 'Error when deleting the order.'))
   }
 }
-
-

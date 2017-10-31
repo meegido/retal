@@ -13,6 +13,8 @@
 			<label for="">Número de metros</label><br>
 			<input class="form-control" type="number" name="meters" [(ngModel)]="meters"><br>
 		</div>
+		<input type="hidden" name="campaignId" value="{{campaignId}}" [(ngModel)]="campaignId">
+		{{order.campaignId}}
 		<button class="btn join-btn" (click)=addOrder(order.value)>ENVIAR</button>
 	</form>
 	<p>{{successMessage}}</p>

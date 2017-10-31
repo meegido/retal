@@ -10,6 +10,7 @@ interface Order {
   buyerUsername: string;
   buyerEmail: string;
   meters: number;
+  campaignId: string;
 }
 
 @Component({
@@ -21,7 +22,8 @@ export class JoinComponent implements OnInit {
   order:Order = {
     buyerUsername: "",
     buyerEmail: "",
-    meters: 0
+    meters: 0,
+    campaignId: ""
   }
   current;
   campaignId;
@@ -46,17 +48,16 @@ export class JoinComponent implements OnInit {
   }
 
   addOrder(order) {
-    console.log(order)
     const {
       buyerUsername,
       buyerEmail,
-      meters
+      meters,
+      campaignId
     } = order
 
-    this.orderService.newOrder({ buyerUsername, buyerEmail, meters, id: this.campaignId })
+    this.orderService.newOrder({ buyerUsername, buyerEmail, meters, campaignId })
       .map(success => this.successMessage = "¡Pedido enviado con éxito!")
       .subscribe(success => this.router.navigate(['home']))
-      console.log("siiiiii")
   }
 
 }

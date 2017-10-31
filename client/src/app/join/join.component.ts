@@ -25,6 +25,7 @@ export class JoinComponent implements OnInit {
   }
   current;
   campaignId;
+  successMessage: String;
   constructor(
     private router:Router,
     private route:ActivatedRoute,
@@ -52,8 +53,9 @@ export class JoinComponent implements OnInit {
       meters
     } = order
 
-    this.orderService.newOrder({buyerUsername, buyerEmail, meters, id: this.campaignId})
-      .subscribe(res => console.log(res))
+    this.orderService.newOrder({ buyerUsername, buyerEmail, meters, id: this.campaignId })
+      .map(success => this.successMessage = "¡Pedido enviado con éxito!")
+      .subscribe(success => this.router.navigate(['home']))
       console.log("siiiiii")
   }
 

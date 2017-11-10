@@ -14,8 +14,8 @@ export class MyCampaignsComponent implements OnInit {
   userCampaigns:any
 
   constructor(
-    private router:Router,
-    private auth:AuthService,
+    private router: Router,
+    private auth: AuthService,
     private campaignService:CampaignsService
   ) {
     this.user = this.auth.getUser();
@@ -29,9 +29,9 @@ export class MyCampaignsComponent implements OnInit {
     })
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  getTotalMeters(orders) {
+  getTotalMeters(orders: Array<any>) {
     let totalMeters = 0
     for(var i = 0; i < orders.length; i++) {
       totalMeters += orders[i].meters

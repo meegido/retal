@@ -1,51 +1,51 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
-import {Http} from '@angular/http';
+import { Http } from '@angular/http';
 import 'rxjs';
 import { environment } from '../../environments/environment';
 
-const BASEURL = environment.BASEURL + "/api/auth";
+const BASEURL = environment.BASEURL + '/api/auth';
 
 @Injectable()
 export class AuthService {
-  private options = {withCredentials:true};
+  private options = { withCredentials: true };
 
-  private user:object;
-  private userLoginEvent:EventEmitter<any> = new EventEmitter<any>();
+  private user: object;
+  private userLoginEvent: EventEmitter<any> = new EventEmitter<any>();
 
 
   constructor(private http: Http) {
     this.isLoggedIn().subscribe();
   }
 
-    public getLoginEventEmitter():EventEmitter<any>{
+    public getLoginEventEmitter(): EventEmitter<any> {
       return this.userLoginEvent;
     }
 
-    public getUser(){
+    public getUser() {
       return this.user;
     }
 
-    private emitUserLoginEvent(user){
+    private emitUserLoginEvent(user) {
       this.user = user;
       this.userLoginEvent.emit(user);
       return user;
     }
 
     private handleError(e) {
-      console.log("AUTH ERROR");
+      console.log('AUTH ERROR');
       return Observable.throw(e.json().message);
     }
 
-    signup(username,password,email) {
-      console.log("entrooo")
+    signup(username, password, email) {
+      console.log('entrooo');
       return this.http.post(`${BASEURL}/signup`, { username, password, email }, this.options)
         .map(res => res.json())
         .map(user => this.emitUserLoginEvent(user))
         .catch(this.handleError);
     }
 
-    login(username,password) {
+    login(username, password) {
       return this.http.post(`${BASEURL}/login`, { username, password} , this.options)
         .map(res => res.json())
         .map(user => this.emitUserLoginEvent(user))

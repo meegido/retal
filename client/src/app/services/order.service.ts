@@ -13,7 +13,7 @@ export class OrderService {
   private options = { withCredentials: true };
 
   constructor(private http: Http) { }
-  
+
   newOrder(order) {
     return this.http.post(`${this.BASEURL}/api/orders/new`, order)
     .map(res => { res.json(); console.log(res)});
